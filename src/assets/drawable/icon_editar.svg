@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20.5" height="20.5" viewBox="0 0 20.5 20.5">
+    <g data-name="Iconly/Curved/Edit Square">
+        <g data-name="Edit Square">
+            <path data-name="Stroke 1" d="M9.25 0C2.313 0 0 2.313 0 9.25s2.313 9.25 9.25 9.25 9.25-2.313 9.25-9.25" style="fill:none;stroke:#56c596;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;stroke-dasharray:0 0" transform="translate(1 1)"/>
+            <path data-name="Stroke 3" d="M10.071.6a2.4 2.4 0 0 0-3.389.209S2.313 5.744.8 7.457s-.4 4.077-.4 4.077 2.5.793 4-.9l5.886-6.647A2.4 2.4 0 0 0 10.071.6z" transform="translate(7.708 1.951)" style="fill:none;stroke:#56c596;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;stroke-dasharray:0 0"/>
+            <path data-name="Stroke 5" d="m0 0 3.6 3.183" transform="translate(13.259 4.051)" style="fill:none;stroke:#56c596;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;stroke-dasharray:0 0"/>
+        </g>
+    </g>
+</svg>

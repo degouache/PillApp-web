@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26" height="28.118" viewBox="0 0 26 28.118">
+    <g data-name="Icons/ skull">
+        <path d="M12 0A11.93 11.93 0 0 0 0 11.8v5.7a2.433 2.433 0 0 0 2.4 2.4h0A2.377 2.377 0 0 1 5 22v3a22.34 22.34 0 0 0 14 0v-3a2.377 2.377 0 0 1 2.6-2.1h0a2.433 2.433 0 0 0 2.4-2.4v-5.7A11.93 11.93 0 0 0 12 0z" style="fill:none;stroke:#56c596;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:2px" transform="translate(1 1)"/>
+        <path data-name="Path" d="M2 2 1 0 0 2" transform="translate(12 19)" style="fill:none;stroke:#56c596;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:2px"/>
+        <path data-name="Path" d="M4.1 4.7 2.9 5A2.509 2.509 0 0 1 0 2.6v-.2A2.433 2.433 0 0 1 2.4 0h1.2a2.374 2.374 0 0 1 2.3 3h0a2.4 2.4 0 0 1-1.8 1.7z" transform="translate(5 14)" style="fill:none;stroke:#56c596;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:2px"/>
+        <path data-name="Path" d="m1.883 4.7 1.2.2a2.389 2.389 0 0 0 2.9-2.3v-.2a2.433 2.433 0 0 0-2.4-2.4h-1.2a2.374 2.374 0 0 0-2.3 3h0a2.4 2.4 0 0 0 1.8 1.7z" transform="translate(15.017 14)" style="fill:none;stroke:#56c596;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:2px"/>
+    </g>
+</svg>
