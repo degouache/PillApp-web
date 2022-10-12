@@ -70,6 +70,18 @@
         text-align: left;
         color: var(--textColor);
 }
+.extrasmall{
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.54;
+    letter-spacing: normal;
+    text-align: right;
+    color: var(--textColor);
+}
 
 a {
         font-family: 'Montserrat', sans-serif;
@@ -166,9 +178,7 @@ label {
 }
 
 .btn-primary {
-    /*width: 1.5rem;
-    height: 1.5rem;*/
-    margin: 17px 44.2px 23.6px 0;
+    margin: none;
     border-radius: 1rem;
     box-shadow: 17px 17px 44.5px 0 rgba(50, 157, 156, 0.21);
     background-image: radial-gradient(circle at 6% 0, #7be495, #329d9c 141%);
