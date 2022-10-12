@@ -29,6 +29,8 @@
      --error: #f75010;
   }
 
+/*Text styles*/
+
 .h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 3em;
@@ -55,6 +57,39 @@
 .h6 {
     font-family: 'Montserrat', sans-serif;
 }
+
+.small{
+
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.85rem;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.54;
+        letter-spacing: normal;
+        text-align: left;
+        color: var(--textColor);
+}
+
+a {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.85rem;
+        font-weight: 800;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.54;
+        letter-spacing: normal;
+        text-align: left;
+        color: var(--primaryGradient);
+        text-decoration: none;
+}
+
+a:hover {
+    color: var(--secondaryGradient);
+}
+
+
+/*Input and related*/
 
 input {
     border-radius: 20px;
@@ -103,11 +138,28 @@ input::placeholder {
     border: none;
 }
 
-.card {
-    box-shadow: 17px 17px 44.5px 0 rgba(50, 157, 156, 0.13);
-    background-color: #fff;
+label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.54;
+    letter-spacing: normal;
+    text-align: left;
+    color: var(--color2);
+}
+
+.form-check-input[type=checkbox] {
+    border-radius: 117.25em;
+}
+
+.form-check-input:checked {
+    background-color: var(--brandColor);
     border: none;
 }
+
+/*Butons*/
 
 .btn {
     border: none;
@@ -132,10 +184,11 @@ input::placeholder {
     color: #fff;
   }
 
-  .form-check-input[type=checkbox] {
-    border-radius: 117.25em;
+/*Other elements*/
+
+  .card {
+    box-shadow: 17px 17px 44.5px 0 rgba(50, 157, 156, 0.13);
+    background-color: #fff;
+    border: none;
 }
-.form-check-input:checked {
-    background-color: --secondaryGradient;
-    border-color: none;
-}
+
