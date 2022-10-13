@@ -1,12 +1,34 @@
 import { NgModule } from '@angular/core';
-import { RegisterModule } from './register/register.module';
 import { LoginComponent } from './login/login.component';
-import { LoginModule } from './login/login.module';
+import { RouterModule, Routes } from '@angular/router';
+import { RegisterComponent } from './register/register.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
+  {
+    path: 'login',
+    loadChildren: () => import("./login/login.module").then(m => m.LoginModule),
+  },
+  {
+    path: 'register',
+    loadChildren: () => import("./register/register.module").then(m => m.RegisterModule),
+  },/*
+  {
+    path: 'home',
+    loadChildren: () => import("./home/home.module").then(m => m.HomeModule),
+    canLoad: 
+  }*/
+];
 
 @NgModule({
-  declarations: [LoginComponent],
-  imports: [RegisterModule, LoginModule],
-  exports: [RegisterModule, LoginModule],
+  declarations: [],
+  imports: [RouterModule.forChild(routes)],
+  exports: [],
   providers: [],
 })
+
 export class PagesModule {}
