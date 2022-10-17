@@ -3,6 +3,8 @@ export interface UserRequest {
     password: string;
 }
 
+
+
 export interface UserResponse {
     token: string;
     user: UserObjet; 
