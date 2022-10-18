@@ -3,15 +3,12 @@ export interface UserRequest {
     password: string;
 }
 
-
-
 export interface UserResponse {
     token: string;
-    user: UserObjet; 
+    profile: profileObject; 
 }
 
-export interface UserObjet {
-      email: string;
+export interface profileObject {
       userName: string; 
 }
 

@@ -1,8 +1,19 @@
 <h1>Pantalla home</h1>
 <div>
     <div class="text-center">
-        <button (click)="(onLogout())" class="btn btn-primary mb-3">
+      <ng-template #viewLogOut></ng-template>
+        <button  (click)="(onLogout())" class="btn btn-primary mb-3">
           Log out
         </button>
+      </div>
+      <div class="text-center">
+        <a *ngIf="!logedIn; else viewLogOut" class="btn btn-primary mb-3">
+          register
+        </a>
+      </div>
+      <div class="text-center">
+        <a *ngIf="!logedIn; else viewLogOut" routerLink="/login" class="btn btn-primary mb-3">
+          Login
+        </a>
       </div>
 </div>

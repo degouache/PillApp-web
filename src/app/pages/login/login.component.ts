@@ -22,8 +22,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     const userServiceData = {
       token: 'string',
-      user: {
-        email: 'string',
+      profile: {
         userName: 'string',
       },
     };
