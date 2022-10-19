@@ -1,15 +1,19 @@
 export interface UserRequest {
-    username: string;
-    password: string;
+  username: string;
+  password: string;
 }
 
 export interface UserResponse {
-    token: string;
-    profile: profileObject; 
+  token: string;
+  profile: ProfileObject;
 }
 
-export interface profileObject {
-      userName: string; 
+export interface ProfileObject {
+  userName: string;
 }
 
-
+export interface UserRegister {
+  email: string;
+  userName: string;
+  password: string;
+}

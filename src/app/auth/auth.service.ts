@@ -9,7 +9,7 @@ import {
   pipe,
   throwError,
 } from 'rxjs';
-import { UserResponse } from 'src/app/shared/models/user.interface';
+import { UserResponse, UserRegister } from 'src/app/shared/models/user.interface';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
 
@@ -27,9 +27,13 @@ export class AuthService {
     return this.logedIn.asObservable();
   }
 
+
+//Login methods 
+
+
   login(authData: UserResponse): Observable<UserResponse | void> {
     return this.http
-      .post<UserResponse>(`${environment.API_URL}/auth/login`, authData)
+      .post<UserResponse>(`${environment.API_URL}/pages/login`, authData)
       .pipe(
         map((response: UserResponse) => {
           console.log('Response->', response);
@@ -71,4 +75,11 @@ export class AuthService {
     window.alert(errorMessage);
     return throwError(errorMessage);
   }
+
+//register methods
+
+register(authData: UserRegister): Observable<UserRegister | void> {
+  return this.http
+  .post<UserRegister>(`${environment.API_URL}/pages/register`, authData);
+}
 }

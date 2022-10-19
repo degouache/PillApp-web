@@ -1,6 +1,6 @@
 import { tokenize } from '@angular/compiler/src/ml_parser/lexer';
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth/auth.service';
+import { AuthService } from '../../auth/auth.service';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 
