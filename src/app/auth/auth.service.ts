@@ -6,7 +6,6 @@ import {
   catchError,
   map,
   Observable,
-  pipe,
   throwError,
 } from 'rxjs';
 import { UserResponse, UserRegister } from 'src/app/shared/models/user.interface';
@@ -33,7 +32,7 @@ export class AuthService {
 
   login(authData: UserResponse): Observable<UserResponse | void> {
     return this.http
-      .post<UserResponse>(`${environment.API_URL}/pages/login`, authData)
+      .post<UserResponse>(`${environment.API_URL}`, authData)
       .pipe(
         map((response: UserResponse) => {
           console.log('Response->', response);
@@ -80,6 +79,6 @@ export class AuthService {
 
 register(authData: UserRegister): Observable<UserRegister | void> {
   return this.http
-  .post<UserRegister>(`${environment.API_URL}/pages/register`, authData);
+  .post<UserRegister>(`${environment.API_URL}`, authData);
 }
 }

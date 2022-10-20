@@ -1,4 +1,3 @@
-import { tokenize } from '@angular/compiler/src/ml_parser/lexer';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
 import { FormBuilder } from '@angular/forms';
@@ -11,14 +10,16 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   constructor(
-    private authSvc: AuthService, 
+    private authSvc: AuthService,
     private formBuilder: FormBuilder,
-    private router: Router,) {}
-    
+    private router: Router
+  ) {}
+
   loginForm = this.formBuilder.group({
     username: [''],
     password: [''],
   });
+
   ngOnInit(): void {
     const userServiceData = {
       token: 'string',
@@ -36,7 +37,7 @@ export class LoginComponent implements OnInit {
       if (response) {
         this.router.navigate(['home']);
       } else {
-        console.log('no hay login que valga');
+        console.log('no hay login');
       }
     });
   }
