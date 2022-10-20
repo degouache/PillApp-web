@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-register',
@@ -17,11 +18,11 @@ export class RegisterComponent implements OnInit {
   ) {}
 
   registerForm = this.formBuilder.group({
-    username: [
+    userName: [
       '',
       [
         Validators.required,
-        Validators.max(20),
+        Validators.maxLength(20),
         Validators.pattern(
           '(?=(?:d*[A-Za-z]){1,})(?=(?:[A-Za-z]*d){1,})[A-Za-zd]{8}'
         ),
@@ -45,13 +46,13 @@ export class RegisterComponent implements OnInit {
     ],
     email: [
       '',
-      [Validators.required, Validators.max(40), Validators.email],
+      [Validators.required, Validators.maxLength(40), Validators.email],
     ],
-    checkbox: ['', Validators.required],
+    checkbox: ['false', Validators.requiredTrue],
   });
 
-  get username() {
-    return this.registerForm.controls['username'];
+  get userName() {
+    return this.registerForm.controls['userName'];
   }
 
   get password() {
@@ -70,20 +71,25 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
-      userName: ['', [Validators.required,Validators.max(20),Validators.pattern]],
+      userName: ['', [Validators.required,Validators.maxLength(20),Validators.pattern]],
       password: ['', [Validators.required,Validators.minLength(6),Validators.pattern]],
       repeatedPassword: ['', [Validators.required,Validators.minLength(6),Validators.pattern]],
-      email: ['', [Validators.required,Validators.max(40),Validators.email]],
-      checkbox: ['', Validators.required],
+      email: ['', [Validators.required,Validators.maxLength(40),Validators.email]],
+      checkbox: ['', Validators.requiredTrue],
     });
   }
 
   registerSubmit(): void {
     const formValue = this.registerForm.value;
     this.submitted = true;
+    this.onReset();
   }
 
   get registerDataForm() {
     return this.registerForm.controls;
+  }
+  onReset(): void {
+    this.submitted = false;
+    this.registerForm.reset();
   }
 }

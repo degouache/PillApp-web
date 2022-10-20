@@ -14,27 +14,24 @@
               aria-describedby="email"
               placeholder="Email"
             />
+
             <!-- Div validators email-->
             <div
-              *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['required']"
+              *ngIf="email.invalid && (email.dirty || email.touched)"
               class="alert alert-danger mt-2"
             >
-              Este campo se obligatorio
+              <div *ngIf="email.errors?.['required']">
+                Este campo se obligatorio
+              </div>
+              <div *ngIf="email.errors?.['maxLength']">
+                Este campo tiene un máximo de
+                {{registerForm.get('email')?.errors?.['maxLength']?.requiredLenght}}
+                caracteres
+              </div>
+              <div *ngIf="email.errors?.['email']">
+                Este campo debe contener un formato de e-mail valido
+              </div>
             </div>
-            <div
-              *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['max']"
-              class="alert alert-danger mt-2"
-            >
-              Este campo tiene un máximo de
-              {{registerForm.get('email')?.errors?.['max']?.requiredLenght}}
-              caracteres
-            </div>
-            <div
-            *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['email']"
-            class="alert alert-danger mt-2"
-          >
-            Este campo debe contener un formato de e-mail valido
-          </div>
           </div>
 
           <!-- Input password-->
@@ -48,28 +45,25 @@
             />
             <!-- Div validators password-->
             <div
-              *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['required']"
+              *ngIf="password.invalid && (password.dirty || password.touched)"
               class="alert alert-danger mt-2"
             >
-              Este campo se obligatorio
+              <div *ngIf="password.errors?.['required']">
+                Este campo se obligatorio
+              </div>
+              <div *ngIf="password.errors?.['minLength']">
+                Este campo tiene un mínimo de
+                {{registerForm.get('password')?.errors?.['minLength']?.requiredLenght}}
+                caracteres
+              </div>
+              <div *ngIf="password.errors?.['pattern']">
+                Este campo debe contener letras, números y un signo de
+                puntuación
+              </div>
             </div>
-            <div
-              *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['minLength']"
-              class="alert alert-danger mt-2"
-            >
-              Este campo tiene un máximo de
-              {{registerForm.get('password')?.errors?.['minLength']?.requiredLenght}}
-              caracteres
-            </div>
-            <div
-            *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['pattern']"
-            class="alert alert-danger mt-2"
-          >
-            Este campo debe contener letras, números y un signo de puntuación
-          </div>
           </div>
 
-          <!-- Input repeat password-->
+          <!-- Input repeatedPassword-->
           <div class="form-group mb-3">
             <input
               type="password"
@@ -78,30 +72,30 @@
               id="repeatedPassword"
               placeholder="Repetir contraseña"
             />
-            <!-- Div validators repeatedPassword-->
+            <!-- Div validators password-->
             <div
-              *ngIf="registerForm.get('repeatedPassword')?.touched && registerForm.get('repeatedPassword')?.errors?.['required']"
+              *ngIf="
+                repeatedPassword.invalid &&
+                (repeatedPassword.dirty || repeatedPassword.touched)
+              "
               class="alert alert-danger mt-2"
             >
-              Este campo se obligatorio
+              <div *ngIf="repeatedPassword.errors?.['required']">
+                Este campo se obligatorio
+              </div>
+              <div *ngIf="repeatedPassword.errors?.['minLength']">
+                Este campo tiene un mínimo de
+                {{registerForm.get('repeatedPassword')?.errors?.['minLength']?.requiredLenght}}
+                caracteres
+              </div>
+              <div *ngIf="repeatedPassword.errors?.['pattern']">
+                Este campo debe contener letras, números y un signo de
+                puntuación
+              </div>
             </div>
-            <div
-              *ngIf="registerForm.get('repeatedPassword')?.touched && registerForm.get('repeatedPassword')?.errors?.['minLength']"
-              class="alert alert-danger mt-2"
-            >
-              Este campo tiene un máximo de
-              {{registerForm.get('repeatedPassword')?.errors?.['minLength']?.requiredLenght}}
-              caracteres
-            </div>
-            <div
-            *ngIf="registerForm.get('repeatedPassword')?.touched && registerForm.get('repeatedPassword')?.errors?.['pattern']"
-            class="alert alert-danger mt-2"
-          >
-            Este campo debe contener letras, números y un signo de puntuación
-          </div>
           </div>
 
-          <!-- Input username-->
+          <!-- Input userName-->
           <div class="form-group mb-4">
             <input
               type="text"
@@ -112,25 +106,21 @@
             />
             <!-- Div validators userName-->
             <div
-              *ngIf="registerForm.get('userName')?.touched && registerForm.get('userName')?.errors?.['required']"
+              *ngIf="userName.invalid && (userName.dirty || userName.touched)"
               class="alert alert-danger mt-2"
             >
-              Este campo se obligatorio
+              <div *ngIf="userName.errors?.['required']">
+                Este campo se obligatorio
+              </div>
+              <div *ngIf="userName.errors?.['minLength']">
+                Este campo tiene un máximo de
+                {{registerForm.get('userName')?.errors?.['maxLength']?.requiredLenght}}
+                caracteres
+              </div>
+              <div *ngIf="userName.errors?.['pattern']">
+                Este campo debe contener letras y números.
+              </div>
             </div>
-            <div
-              *ngIf="registerForm.get('userName')?.touched && registerForm.get('userName')?.errors?.['max']"
-              class="alert alert-danger mt-2"
-            >
-              Este campo tiene un máximo de
-              {{registerForm.get('userName')?.errors?.['max']?.requiredLenght}}
-              caracteres
-            </div>
-            <div
-            *ngIf="registerForm.get('userName')?.touched && registerForm.get('userName')?.errors?.['pattern']"
-            class="alert alert-danger mt-2"
-          >
-            Este campo debe contener letras y números.
-          </div>
           </div>
 
           <!-- Input checkbox-->
@@ -146,15 +136,21 @@
             >
             <!-- Div validators checkbox-->
             <div
-              *ngIf="registerForm.get('checkbox')?.touched && registerForm.get('checkbox')?.errors?.['required']"
+              *ngIf="checkbox.invalid && (checkbox.dirty || checkbox.touched)"
               class="alert alert-danger mt-2"
             >
-              Este campo se obligatorio
+              <div *ngIf="checkbox.errors?.['requiredTrue']">
+                Debe aceptar los términos y condiciones.
+              </div>
             </div>
           </div>
 
           <div class="text-center">
-            <button type="submit" class="btn btn-primary mb-3"[disabled]="!registerForm.valid">
+            <button
+              type="submit"
+              class="btn btn-primary mb-3"
+              [disabled]="!registerForm.valid"
+            >
               Crear cuenta
             </button>
           </div>
