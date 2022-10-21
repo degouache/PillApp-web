@@ -1,8 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
-import { FormBuilder, Validators} from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 
+const MINLENGHT = 6;
 
 @Component({
   selector: 'app-register',
@@ -17,64 +24,72 @@ export class RegisterComponent implements OnInit {
     private router: Router
   ) {}
 
-  registerForm = this.formBuilder.group({
-    userName: [
-      '',
-      [
-        Validators.required,
-        Validators.maxLength(20),
-        Validators.pattern(
-          '(?=(?:d*[A-Za-z]){1,})(?=(?:[A-Za-z]*d){1,})[A-Za-zd]{8}'
-        ),
-      ],
-    ],
-    password: [
-      '',
+  registerForm = new FormGroup({
+    userName: new FormControl('', [
       Validators.required,
-      Validators.minLength(6),
+      Validators.maxLength(20),
       Validators.pattern(
-        '((?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]))(?=.*[!@#&()-/$=<>?])[a-zA-Z0-9!@#&()-/$=<>?]+$'
+        '(?=(?:d*[A-Za-z]){1,})(?=(?:[A-Za-z]*d){1,})[A-Za-zd]{8}'
       ),
-    ],
-    repeatedPassword: [
-      '',
+    ]),
+    password: new FormControl('', [
       Validators.required,
-      Validators.minLength(6),
-      Validators.pattern(
-        '((?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]))(?=.*[!@#&()-/$=<>?])[a-zA-Z0-9!@#&()-/$=<>?]+$'
-      ),
-    ],
-    email: [
-      '',
-      [Validators.required, Validators.maxLength(40), Validators.email],
-    ],
-    checkbox: ['false', Validators.requiredTrue],
+      Validators.minLength(MINLENGHT),
+      // Validators.pattern(
+      //   '((?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]))(?=.*[!@#&()-/$=<>?])[a-zA-Z0-9!@#&()-/$=<>?]+$'
+      // ),
+    ]),
+    repeatedPassword: new FormControl('', [
+      Validators.required,
+      Validators.minLength(MINLENGHT),
+      // Validators.pattern(
+      //   '((?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]))(?=.*[!@#&()-/$=<>?])[a-zA-Z0-9!@#&()-/$=<>?]+$'
+      // ),
+    ]),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.maxLength(40),
+      Validators.email,
+    ]),
+    checkbox: new FormControl('false', Validators.requiredTrue),
   });
 
-  get userName() {
+  get userName(): AbstractControl {
     return this.registerForm.controls['userName'];
   }
 
-  get password() {
+  get password(): AbstractControl {
     return this.registerForm.controls['password'];
   }
-  get repeatedPassword() {
+  get repeatedPassword(): AbstractControl {
     return this.registerForm.controls['repeatedPassword'];
   }
 
-  get email() {
+  get email(): AbstractControl {
     return this.registerForm.controls['email'];
   }
-  get checkbox() {
+  get checkbox(): AbstractControl {
     return this.registerForm.controls['checkbox'];
   }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
-      userName: ['', [Validators.required,Validators.maxLength(20),Validators.pattern]],
-      password: ['', [Validators.required,Validators.minLength(6),Validators.pattern]],
-      repeatedPassword: ['', [Validators.required,Validators.minLength(6),Validators.pattern]],
-      email: ['', [Validators.required,Validators.maxLength(40),Validators.email]],
+      userName: [
+        '',
+        [Validators.required, Validators.maxLength(20), Validators.pattern],
+      ],
+      password: [
+        '',
+        [Validators.required, Validators.minLength(6), Validators.pattern],
+      ],
+      repeatedPassword: [
+        '',
+        [Validators.required, Validators.minLength(6), Validators.pattern],
+      ],
+      email: [
+        '',
+        [Validators.required, Validators.maxLength(40), Validators.email],
+      ],
       checkbox: ['', Validators.requiredTrue],
     });
   }

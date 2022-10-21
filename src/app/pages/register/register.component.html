@@ -6,7 +6,7 @@
         <form [formGroup]="registerForm" (ngSubmit)="registerSubmit()">
           <div class="form-group mb-3">
             <!-- Input e-mail-->
-            <input
+            <input 
               type="email"
               formControlName="email"
               class="form-control"
@@ -45,21 +45,34 @@
             />
             <!-- Div validators password-->
             <div
-              *ngIf="password.invalid && (password.dirty || password.touched)"
+              *ngIf="password.invalid && password.touched"
               class="alert alert-danger mt-2"
             >
-              <div *ngIf="password.errors?.['required']">
+              <!-- <div *ngIf="password.errors?.['required']">
+                Este campo se obligatorio
+              </div> -->
+
+              <div *ngIf="password.getError('required')">
                 Este campo se obligatorio
               </div>
+<!-- 
               <div *ngIf="password.errors?.['minLength']">
                 Este campo tiene un mínimo de
                 {{registerForm.get('password')?.errors?.['minLength']?.requiredLenght}}
                 caracteres
+              </div> -->
+
+              <div *ngIf="password.getError('minlength')">
+                Este campo tiene un mínimo de
+                {{password.getError('minlength').requiredLength}}
+                caracteres
               </div>
-              <div *ngIf="password.errors?.['pattern']">
+
+
+              <!-- <div *ngIf="password.errors?.['pattern']">
                 Este campo debe contener letras, números y un signo de
                 puntuación
-              </div>
+              </div> -->
             </div>
           </div>
 
