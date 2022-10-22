@@ -9,7 +9,9 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 
-const MINLENGHT = 6;
+const MINLENGHTPASSWORD = 6;
+const MAXLENGHTUSERNAME = 20;
+const MAXLENGHTEMAIL = 40;
 
 @Component({
   selector: 'app-register',
@@ -27,31 +29,31 @@ export class RegisterComponent implements OnInit {
   registerForm = new FormGroup({
     userName: new FormControl('', [
       Validators.required,
-      Validators.maxLength(20),
+      Validators.maxLength(MAXLENGHTUSERNAME),
       Validators.pattern(
         '(?=(?:d*[A-Za-z]){1,})(?=(?:[A-Za-z]*d){1,})[A-Za-zd]{8}'
       ),
     ]),
     password: new FormControl('', [
       Validators.required,
-      Validators.minLength(MINLENGHT),
-      // Validators.pattern(
-      //   '((?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]))(?=.*[!@#&()-/$=<>?])[a-zA-Z0-9!@#&()-/$=<>?]+$'
-      // ),
+      Validators.minLength(MINLENGHTPASSWORD),
+      Validators.pattern(
+        '((?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]))(?=.*[!@#&()-/$=<>?])[a-zA-Z0-9!@#&()-/$=<>?]+$'
+      ),
     ]),
     repeatedPassword: new FormControl('', [
       Validators.required,
-      Validators.minLength(MINLENGHT),
-      // Validators.pattern(
-      //   '((?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]))(?=.*[!@#&()-/$=<>?])[a-zA-Z0-9!@#&()-/$=<>?]+$'
-      // ),
+      Validators.minLength(MINLENGHTPASSWORD),
+      Validators.pattern(
+        '((?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]))(?=.*[!@#&()-/$=<>?])[a-zA-Z0-9!@#&()-/$=<>?]+$'
+      ),
     ]),
     email: new FormControl('', [
       Validators.required,
-      Validators.maxLength(40),
+      Validators.maxLength(MAXLENGHTEMAIL),
       Validators.email,
     ]),
-    checkbox: new FormControl('false', Validators.requiredTrue),
+    checkbox: new FormControl('false', Validators.required),
   });
 
   get userName(): AbstractControl {
@@ -76,19 +78,19 @@ export class RegisterComponent implements OnInit {
     this.registerForm = this.formBuilder.group({
       userName: [
         '',
-        [Validators.required, Validators.maxLength(20), Validators.pattern],
+        [Validators.required, Validators.maxLength(MAXLENGHTUSERNAME), Validators.pattern],
       ],
       password: [
         '',
-        [Validators.required, Validators.minLength(6), Validators.pattern],
+        [Validators.required, Validators.minLength(MINLENGHTPASSWORD), Validators.pattern],
       ],
       repeatedPassword: [
         '',
-        [Validators.required, Validators.minLength(6), Validators.pattern],
+        [Validators.required, Validators.minLength(MINLENGHTPASSWORD), Validators.pattern],
       ],
       email: [
         '',
-        [Validators.required, Validators.maxLength(40), Validators.email],
+        [Validators.required, Validators.maxLength(MAXLENGHTEMAIL), Validators.email],
       ],
       checkbox: ['', Validators.requiredTrue],
     });

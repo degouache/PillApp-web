@@ -6,7 +6,7 @@
         <form [formGroup]="registerForm" (ngSubmit)="registerSubmit()">
           <div class="form-group mb-3">
             <!-- Input e-mail-->
-            <input 
+            <input
               type="email"
               formControlName="email"
               class="form-control"
@@ -20,15 +20,15 @@
               *ngIf="email.invalid && (email.dirty || email.touched)"
               class="alert alert-danger mt-2"
             >
-              <div *ngIf="email.errors?.['required']">
-                Este campo se obligatorio
-              </div>
-              <div *ngIf="email.errors?.['maxLength']">
+            <div *ngIf="email.getError('required')">
+              Este campo se obligatorio
+            </div>
+              <div *ngIf="email.getError('maxlength')">
                 Este campo tiene un máximo de
-                {{registerForm.get('email')?.errors?.['maxLength']?.requiredLenght}}
+                {{email.getError("maxlength").requiredLength }}
                 caracteres
               </div>
-              <div *ngIf="email.errors?.['email']">
+              <div *ngIf="email.getError('email')">
                 Este campo debe contener un formato de e-mail valido
               </div>
             </div>
@@ -45,34 +45,22 @@
             />
             <!-- Div validators password-->
             <div
-              *ngIf="password.invalid && password.touched"
+              *ngIf="password.invalid && (password.dirty || password.touched)"
               class="alert alert-danger mt-2"
             >
-              <!-- <div *ngIf="password.errors?.['required']">
-                Este campo se obligatorio
-              </div> -->
-
               <div *ngIf="password.getError('required')">
                 Este campo se obligatorio
               </div>
-<!-- 
-              <div *ngIf="password.errors?.['minLength']">
-                Este campo tiene un mínimo de
-                {{registerForm.get('password')?.errors?.['minLength']?.requiredLenght}}
-                caracteres
-              </div> -->
 
               <div *ngIf="password.getError('minlength')">
                 Este campo tiene un mínimo de
-                {{password.getError('minlength').requiredLength}}
+                {{ password.getError("minlength").requiredLength }}
                 caracteres
               </div>
-
-
-              <!-- <div *ngIf="password.errors?.['pattern']">
+              <div *ngIf="password.errors?.['pattern']">
                 Este campo debe contener letras, números y un signo de
                 puntuación
-              </div> -->
+              </div>
             </div>
           </div>
 
@@ -93,12 +81,12 @@
               "
               class="alert alert-danger mt-2"
             >
-              <div *ngIf="repeatedPassword.errors?.['required']">
-                Este campo se obligatorio
-              </div>
-              <div *ngIf="repeatedPassword.errors?.['minLength']">
+            <div *ngIf="repeatedPassword.getError('required')">
+              Este campo se obligatorio
+            </div>
+              <div *ngIf="repeatedPassword.getError('minlength')">
                 Este campo tiene un mínimo de
-                {{registerForm.get('repeatedPassword')?.errors?.['minLength']?.requiredLenght}}
+                {{repeatedPassword.getError("minlength").requiredLength}}
                 caracteres
               </div>
               <div *ngIf="repeatedPassword.errors?.['pattern']">
@@ -122,12 +110,12 @@
               *ngIf="userName.invalid && (userName.dirty || userName.touched)"
               class="alert alert-danger mt-2"
             >
-              <div *ngIf="userName.errors?.['required']">
-                Este campo se obligatorio
-              </div>
-              <div *ngIf="userName.errors?.['minLength']">
+            <div *ngIf="userName.getError('required')">
+              Este campo se obligatorio
+            </div>
+              <div *ngIf="userName.getError('maxlength')">
                 Este campo tiene un máximo de
-                {{registerForm.get('userName')?.errors?.['maxLength']?.requiredLenght}}
+                {{ userName.getError("maxlength").requiredLength }}
                 caracteres
               </div>
               <div *ngIf="userName.errors?.['pattern']">
@@ -152,7 +140,7 @@
               *ngIf="checkbox.invalid && (checkbox.dirty || checkbox.touched)"
               class="alert alert-danger mt-2"
             >
-              <div *ngIf="checkbox.errors?.['requiredTrue']">
+              <div *ngIf="checkbox.getError('required')">
                 Debe aceptar los términos y condiciones.
               </div>
             </div>
