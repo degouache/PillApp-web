@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 const MINLENGHTPASSWORD = 6;
 const MAXLENGHTUSERNAME = 20;
 const MAXLENGHTEMAIL = 40;
+const PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_])(?=\S+$).{8,}$";
+const USERNAME_PATTERN =  "^\w*$";
 
 @Component({
   selector: 'app-register',
@@ -30,22 +32,20 @@ export class RegisterComponent implements OnInit {
     userName: new FormControl('', [
       Validators.required,
       Validators.maxLength(MAXLENGHTUSERNAME),
-      Validators.pattern(
-        '(?=(?:d*[A-Za-z]){1,})(?=(?:[A-Za-z]*d){1,})[A-Za-zd]{8}'
+      Validators.pattern(USERNAME_PATTERN
       ),
     ]),
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(MINLENGHTPASSWORD),
-      Validators.pattern(
-        '((?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]))(?=.*[!@#&()-/$=<>?])[a-zA-Z0-9!@#&()-/$=<>?]+$'
+      Validators.pattern(PASSWORD_PATTERN
       ),
     ]),
     repeatedPassword: new FormControl('', [
       Validators.required,
       Validators.minLength(MINLENGHTPASSWORD),
       Validators.pattern(
-        '((?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]))(?=.*[!@#&()-/$=<>?])[a-zA-Z0-9!@#&()-/$=<>?]+$'
+        PASSWORD_PATTERN
       ),
     ]),
     email: new FormControl('', [
