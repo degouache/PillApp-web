@@ -21,15 +21,6 @@ export class LoginComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    const userServiceData = {
-      token: 'string',
-      profile: {
-        userName: 'string',
-      },
-    };
-    this.authSvc
-      .login(userServiceData)
-      .subscribe((res) => console.log('Login hecho'));
   }
   onLogin(): void {
     const formValue = this.loginForm.value;

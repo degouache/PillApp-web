@@ -6,8 +6,8 @@ import {
   catchError,
   map,
   Observable,
-  throwError,
-} from 'rxjs';
+  throwError
+  } from 'rxjs';
 import { UserResponse, UserRegister } from 'src/app/shared/models/user.interface';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
@@ -30,7 +30,7 @@ export class AuthService {
 //Login methods 
 
 
-  login(authData: UserResponse): Observable<UserResponse | void> {
+  login(authData: UserResponse): Observable<UserResponse> {
     return this.http
       .post<UserResponse>(`${environment.API_URL}`, authData)
       .pipe(
@@ -71,8 +71,8 @@ export class AuthService {
     if (error) {
       errorMessage = `Error: code ${error.message}`;
     }
-    window.alert(errorMessage);
-    return throwError(errorMessage);
+    console.log(errorMessage);
+    return throwError(() => new Error(errorMessage));
   }
 
 //register methods

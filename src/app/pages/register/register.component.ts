@@ -8,12 +8,14 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import PasswordValidator from '../../utils/password-validator';
+
 
 const MINLENGHTPASSWORD = 6;
 const MAXLENGHTUSERNAME = 20;
 const MAXLENGHTEMAIL = 40;
-const PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_])(?=\S+$).{8,}$";
-const USERNAME_PATTERN =  "^\w*$";
+const PASSWORD_PATTERN = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_])(?=\S+$).*$/;
+const USERNAME_PATTERN =  /^\w*$/;
 
 @Component({
   selector: 'app-register',
@@ -32,21 +34,17 @@ export class RegisterComponent implements OnInit {
     userName: new FormControl('', [
       Validators.required,
       Validators.maxLength(MAXLENGHTUSERNAME),
-      Validators.pattern(USERNAME_PATTERN
-      ),
+      PasswordValidator.patternValidator(USERNAME_PATTERN , { hasNumberandLetter: true })
     ]),
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(MINLENGHTPASSWORD),
-      Validators.pattern(PASSWORD_PATTERN
-      ),
+      PasswordValidator.patternValidator(PASSWORD_PATTERN , { hasSpecialCharacters: true })
+      // Validators.pattern(PASSWORD_PATTERN)
     ]),
     repeatedPassword: new FormControl('', [
       Validators.required,
-      Validators.minLength(MINLENGHTPASSWORD),
-      Validators.pattern(
-        PASSWORD_PATTERN
-      ),
+      PasswordValidator.match("password", "repeatedPassword")
     ]),
     email: new FormControl('', [
       Validators.required,
@@ -73,27 +71,28 @@ export class RegisterComponent implements OnInit {
   get checkbox(): AbstractControl {
     return this.registerForm.controls['checkbox'];
   }
+  
 
   ngOnInit(): void {
-    this.registerForm = this.formBuilder.group({
-      userName: [
-        '',
-        [Validators.required, Validators.maxLength(MAXLENGHTUSERNAME), Validators.pattern],
-      ],
-      password: [
-        '',
-        [Validators.required, Validators.minLength(MINLENGHTPASSWORD), Validators.pattern],
-      ],
-      repeatedPassword: [
-        '',
-        [Validators.required, Validators.minLength(MINLENGHTPASSWORD), Validators.pattern],
-      ],
-      email: [
-        '',
-        [Validators.required, Validators.maxLength(MAXLENGHTEMAIL), Validators.email],
-      ],
-      checkbox: ['', Validators.requiredTrue],
-    });
+    // this.registerForm = this.formBuilder.group({
+    //   userName: [
+    //     '',
+    //     [Validators.required, Validators.maxLength(MAXLENGHTUSERNAME), Validators.pattern(USERNAME_PATTERN)],
+    //   ],
+    //   password: [
+    //     '',
+    //     [Validators.required, Validators.minLength(MINLENGHTPASSWORD), Validators.pattern(PASSWORD_PATTERN)],
+    //   ],
+    //   repeatedPassword: [
+    //     '',
+    //     [Validators.required, PasswordValidator.match("password", "repeatedPassword")],
+    //   ],
+    //   email: [
+    //     '',
+    //     [Validators.required, Validators.maxLength(MAXLENGHTEMAIL), Validators.email],
+    //   ],
+    //   checkbox: ['', Validators.requiredTrue]}
+    //   );
   }
 
   registerSubmit(): void {
@@ -110,3 +109,4 @@ export class RegisterComponent implements OnInit {
     this.registerForm.reset();
   }
 }
+
