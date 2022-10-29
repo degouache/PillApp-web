@@ -59,8 +59,7 @@
                 caracteres
               </div>
               <div *ngIf="password.getError('hasSpecialCharacters')">
-                -Este campo debe contener letras, números y un signo de
-                puntuación
+                -Este campo debe contener una mayúscula, un número, un signo de puntuación.
               </div>
             </div>
           </div>
@@ -113,8 +112,13 @@
                 {{ userName.getError("maxlength").requiredLength }}
                 caracteres {{password.getError|json}}
               </div>
+              <div *ngIf="userName.getError('minlength')">
+                -Este campo tiene un mínimo de
+                {{ userName.getError("minlength").requiredLength }}
+                caracteres {{password.getError|json}}
+              </div>
               <div *ngIf="userName.getError('hasNumberandLetter')">
-                -Este campo debe contener letras y números.
+                -Este campo solo puede contener letras y números sin espacios.
               </div>
             </div>
           </div>

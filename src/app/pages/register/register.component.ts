@@ -13,6 +13,7 @@ import PasswordValidator from '../../utils/password-validator';
 
 const MINLENGHTPASSWORD = 6;
 const MAXLENGHTUSERNAME = 20;
+const MINLENGHTUSERNAME = 3;
 const MAXLENGHTEMAIL = 40;
 const PASSWORD_PATTERN = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_])(?=\S+$).*$/;
 const USERNAME_PATTERN =  /^\w*$/;
@@ -34,6 +35,7 @@ export class RegisterComponent implements OnInit {
     userName: new FormControl('', [
       Validators.required,
       Validators.maxLength(MAXLENGHTUSERNAME),
+      Validators.minLength(MINLENGHTUSERNAME),
       PasswordValidator.patternValidator(USERNAME_PATTERN , { hasNumberandLetter: true })
     ]),
     password: new FormControl('', [
@@ -44,7 +46,7 @@ export class RegisterComponent implements OnInit {
     ]),
     repeatedPassword: new FormControl('', [
       Validators.required,
-      PasswordValidator.match("password", "repeatedPassword")
+      // PasswordValidator.match("password", "repeatedPassword")
     ]),
     email: new FormControl('', [
       Validators.required,
