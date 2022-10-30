@@ -1,15 +1,24 @@
 import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 
 export default class PasswordValidator {
-
-  static match(control: AbstractControl) {
-    const password: string = control.get('password')?.value; // Coge password de nuestro campo password del formulario
-    const repeatedPassword: string = control.get('repeatedPassword')?.value; // Coge repeatedPassword de nuestro campo repeatedPassword del formulario
-    // compara las dos cosas
-    if (password !== repeatedPassword) {
-      // si no son iguales, saca un error en el form
-      // control.get('repeatedPassword').setErrors({ NoPassswordMatch: true });
-    }
+  static match(
+    password: string,
+    repeatedPassword: string,
+    error: ValidationErrors
+  ): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const passwordCtrl: string = control.get(password)?.value; // Coge password de nuestro campo password del formulario
+      const repeatedPasswordCtrl: string = control.get(repeatedPassword)?.value; // Coge repeatedPassword de nuestro campo repeatedPassword del formulario
+      // console.log(control);
+      // compara las dos cosas
+      if (passwordCtrl !== repeatedPasswordCtrl) {
+        // si no son iguales, saca un error en el form
+        control.get('repeatedPassword')?.setErrors(error);
+        return error;
+      }
+      control.get('repeatedPassword')?.setErrors(null);
+      return null;
+    };
   }
 
   static patternValidator(regex: RegExp, error: ValidationErrors): ValidatorFn {

@@ -1,14 +1,11 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, catchError, map, Observable, throwError } from 'rxjs';
 import {
-  BehaviorSubject,
-  catchError,
-  map,
-  Observable,
-  throwError
-  } from 'rxjs';
-import { UserResponse, UserRegister } from 'src/app/shared/models/user.interface';
+  UserResponse,
+  UserRegister,
+} from 'src/app/shared/models/user.interface';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
 
@@ -22,15 +19,13 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  get log(): Observable<boolean> {
+  public get log(): Observable<boolean> {
     return this.logedIn.asObservable();
   }
 
+  //Login methods
 
-//Login methods 
-
-
-  login(authData: UserResponse): Observable<UserResponse> {
+  public login(authData: UserResponse): Observable<UserResponse> {
     return this.http
       .post<UserResponse>(`${environment.API_URL}`, authData)
       .pipe(
@@ -44,13 +39,13 @@ export class AuthService {
       );
   }
 
-  logout(): void {
+  public logout(): void {
     localStorage.removeItem('userResponse');
     this.logedIn.next(false);
     this.router.navigate(['/login']);
   }
 
-  readToken(): string {
+  public readToken(): string {
     let token = '';
     const userResponse = localStorage.getItem('userResponse');
     if (!!userResponse) {
@@ -75,10 +70,9 @@ export class AuthService {
     return throwError(() => new Error(errorMessage));
   }
 
-//register methods
+  //register methods
 
-register(authData: UserRegister): Observable<UserRegister | void> {
-  return this.http
-  .post<UserRegister>(`${environment.API_URL}`, authData);
-}
+  public register(authData: UserRegister): Observable<UserRegister | void> {
+    return this.http.post<UserRegister>(`${environment.API_URL}`, authData);
+  }
 }

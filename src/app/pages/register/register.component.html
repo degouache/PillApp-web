@@ -44,7 +44,6 @@
               placeholder="Contraseña"
             />
             <!-- Div validators password-->
-            {{password.errors | json}}
             <div
               *ngIf="password.invalid && (password.dirty || password.touched)"
               class="alert alert-danger mt-2"
@@ -59,7 +58,8 @@
                 caracteres
               </div>
               <div *ngIf="password.getError('hasSpecialCharacters')">
-                -Este campo debe contener una mayúscula, un número, un signo de puntuación.
+                -Este campo debe contener una mayúscula, un número, un signo de
+                puntuación.
               </div>
             </div>
           </div>
@@ -84,7 +84,7 @@
               <div *ngIf="repeatedPassword.getError('required')">
                 -Este campo se obligatorio
               </div>
-              <div *ngIf="repeatedPassword.getError('matching')">
+              <div *ngIf="repeatedPassword.getError('NoPassswordMatch')">
                 -Las contraseñas deben coincidir
               </div>
             </div>
@@ -110,12 +110,12 @@
               <div *ngIf="userName.getError('maxlength')">
                 -Este campo tiene un máximo de
                 {{ userName.getError("maxlength").requiredLength }}
-                caracteres {{password.getError|json}}
+                caracteres {{ password.getError | json }}
               </div>
               <div *ngIf="userName.getError('minlength')">
                 -Este campo tiene un mínimo de
                 {{ userName.getError("minlength").requiredLength }}
-                caracteres {{password.getError|json}}
+                caracteres {{ password.getError | json }}
               </div>
               <div *ngIf="userName.getError('hasNumberandLetter')">
                 -Este campo solo puede contener letras y números sin espacios.
