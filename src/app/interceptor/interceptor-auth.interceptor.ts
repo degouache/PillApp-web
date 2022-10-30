@@ -11,7 +11,6 @@ import { AuthService } from '../auth/auth.service';
 @Injectable()
 export class InterceptorAuthInterceptor implements HttpInterceptor {
   constructor(private authService: AuthService) {}
-
   intercept(
     request: HttpRequest<unknown>,
     next: HttpHandler
@@ -26,11 +25,11 @@ export class InterceptorAuthInterceptor implements HttpInterceptor {
       });
       if (!request.headers.has('Content-Type')) {
         request = request.clone({
-          headers: request.headers.set('Content-Type', 'aplication/json'),
+          headers: request.headers.set('Content-Type', 'application/json'),
         });
       }
       request = request.clone({
-        headers: request.headers.set('Accept', 'aplication/json'),
+        headers: request.headers.set('Accept', 'application/json'),
       });
     }
     return next.handle(request);

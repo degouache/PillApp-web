@@ -27,7 +27,7 @@ export class AuthService {
 
   public login(authData: UserResponse): Observable<UserResponse> {
     return this.http
-      .post<UserResponse>(`${environment.API_URL}`, authData)
+      .post<UserResponse>(`${environment.API_URL}/login`, authData)
       .pipe(
         map((response: UserResponse) => {
           console.log('Response->', response);
@@ -73,6 +73,6 @@ export class AuthService {
   //register methods
 
   public register(authData: UserRegister): Observable<UserRegister | void> {
-    return this.http.post<UserRegister>(`${environment.API_URL}`, authData);
+    return this.http.post<UserRegister>(`${environment.API_URL}/user`, authData);
   }
 }

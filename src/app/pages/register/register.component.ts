@@ -80,27 +80,7 @@ export class RegisterComponent implements OnInit {
     return this.registerForm.controls['checkbox'];
   }
 
-  ngOnInit(): void {
-    // this.registerForm = this.formBuilder.group({
-    //   userName: [
-    //     '',
-    //     [Validators.required, Validators.maxLength(MAXLENGHTUSERNAME), Validators.pattern(USERNAME_PATTERN)],
-    //   ],
-    //   password: [
-    //     '',
-    //     [Validators.required, Validators.minLength(MINLENGHTPASSWORD), Validators.pattern(PASSWORD_PATTERN)],
-    //   ],
-    //   repeatedPassword: [
-    //     '',
-    //     [Validators.required, PasswordValidator.match("password", "repeatedPassword")],
-    //   ],
-    //   email: [
-    //     '',
-    //     [Validators.required, Validators.maxLength(MAXLENGHTEMAIL), Validators.email],
-    //   ],
-    //   checkbox: ['', Validators.requiredTrue]}
-    //   );
-  }
+  ngOnInit(): void {}
 
   registerSubmit(): void {
     const formValue = this.registerForm.value;
@@ -114,6 +94,7 @@ export class RegisterComponent implements OnInit {
         .register(payload)
         .subscribe((userRegistered) => console.log(userRegistered));
     }
+    
     this.submitted = true;
     this.onReset();
   }
