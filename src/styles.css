@@ -358,3 +358,35 @@ label {
     background-color: #e0ecde;
     border-radius: 99px;
   }
+
+  /*horizontal scrolling*/
+
+  .scrolling-wrapper{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+   }
+
+   /* width */
+    ::-webkit-scrollbar {
+    height: 15px;
+  }
+  
+  /* Track */
+    ::-webkit-scrollbar-track {
+    box-shadow: inset 17px 17px 44.5px 0 rgba(50, 157, 156, 0.13);
+    border-radius: 32px;
+  }
+   
+  /* Handle */
+    ::-webkit-scrollbar-thumb {
+    background: var(--color3); 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+    background: var(--variant4); 
+  }
+   
