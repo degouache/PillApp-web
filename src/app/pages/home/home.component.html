@@ -26,28 +26,6 @@
         <app-card-remember-do-it></app-card-remember-do-it>
         <app-card-vital></app-card-vital>
       </div>
-    <!--To do: borrar al ponerlos bien-->
-    <div class="d-flex mt-5 justify-content-center">
-      <div class="text-center m-5">
-        <ng-template #viewLogOut></ng-template>
-        <button (click)="onLogout()" class="btn btn-primary mb-3">
-          Log out
-        </button>
-      </div>
-      <div class="text-center m-5">
-        <a *ngIf="!logedIn; else viewLogOut" class="btn btn-primary mb-3">
-          register
-        </a>
-      </div>
-      <div class="text-center m-5">
-        <a
-          *ngIf="!logedIn; else viewLogOut"
-          routerLink="/login"
-          class="btn btn-primary mb-3"
-        >
-          Login
-        </a>
-      </div>
-    </div>
+
   </div>
 </div>
