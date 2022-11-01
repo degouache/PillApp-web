@@ -8,6 +8,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HeaderComponent } from './shared/header/header.component';
 import { InterceptorAuthInterceptor } from './interceptor/interceptor-auth.interceptor';
+import { CardCaredPersonHomeComponent } from './shared/card-cared-person-home/card-cared-person-home.component';
 
 
 @NgModule({
