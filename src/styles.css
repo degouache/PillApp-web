@@ -48,6 +48,9 @@
 }
 .h4 {
   font-family: "Montserrat", sans-serif;
+  color: var(--textColor);
+  font-weight: 700;
+  margin-bottom: none;
 }
 .h5 {
   font-family: "Montserrat", sans-serif;
@@ -284,6 +287,19 @@ label {
 .btn {
   border: none;
 }
+.btn:active {
+  background-image: radial-gradient(circle at 6% 0, #56c596, #205072 141%);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75em;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+  text-align: center;
+  color: #fff !important; /*to do: fix this*/
+  
+}
 
 .btn-primary {
   margin: none;
@@ -330,6 +346,31 @@ label {
 .btn-outline-primary:hover {
   background-color: var(--error);
   border: solid 2px var(--error);
+}
+
+.btn-icon {
+  margin: none;
+  border-radius: 1rem;
+  box-shadow: 17px 17px 44.5px 0 rgba(50, 157, 156, 0.21);
+  background-color: var(--color2);
+  padding: 16px 96px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75em;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+  text-align: center;
+  color: #fff;
+}
+.btn-icon:hover {
+  margin: none;
+  border-radius: 1rem;
+  box-shadow: 17px 17px 44.5px 0 rgba(50, 157, 156, 0.21);
+  padding: 16px 96px;
+  background-color: var(--color1);
+  color: #fff;
 }
 
 /*Other elements*/
@@ -417,26 +458,30 @@ label {
   overflow-y: hidden;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
+  background-color: transparent;
 }
-
-/* width */
 ::-webkit-scrollbar {
-  height: 15px;
+  height: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 17px 17px 44.5px 0 rgba(50, 157, 156, 0.13);
+  box-shadow: inset 17px 17px 44.5px 0 rgba(50, 157, 155, 0.089);
   border-radius: 32px;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: var(--color3);
   border-radius: 10px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--variant4);
+}
+
+/* divider */
+.separation-line {
+  height: 5px;
+  background: var(--color3);
+  border-radius: 99px;
+  width: 100%;
 }
