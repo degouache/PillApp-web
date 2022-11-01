@@ -119,7 +119,24 @@ a:hover {
     color: var(--secondaryGradient);
 }
 
-.chip-text{
+.chip-text-orange{
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.54;
+    letter-spacing: normal;
+    text-align: left;
+    color: var(--variant4);
+    margin: 0em;
+    border: solid var(--variant4) 2px;
+    border-radius: 2em;
+    padding: 0.5em;
+}
+
+.chip-text-yellow{
 
     font-family: 'Montserrat', sans-serif;
     font-size: 0.85rem;
@@ -132,6 +149,40 @@ a:hover {
     color: var(--warning);
     margin: 0em;
     border: solid var(--warning) 2px;
+    border-radius: 2em;
+    padding: 0.5em;
+}
+
+.chip-text-blue{
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.54;
+    letter-spacing: normal;
+    text-align: left;
+    color: var(--variant1);
+    margin: 0em;
+    border: solid var(--variant1) 2px;
+    border-radius: 2em;
+    padding: 0.5em;
+}
+
+.chip-text-green{
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.54;
+    letter-spacing: normal;
+    text-align: left;
+    color: var(--color2);
+    margin: 0em;
+    border: solid var(--color2) 2px;
     border-radius: 2em;
     padding: 0.5em;
 }
@@ -251,14 +302,38 @@ label {
 
 /*home elements*/
 
-.line_card {
+.line-card-yellow {
     height: 80px;
     width: 8px;
-    background-color: #FECC01;
+    background-color: var(--warning);
     border-radius: 99px;
     margin: auto;
   }
-.card_chip {
+
+  .line-card-blue {
+    height: 80px;
+    width: 8px;
+    background-color: var(--variant1);
+    border-radius: 99px;
+    margin: auto;
+  }
+
+  .line-card-orange {
+    height: 80px;
+    width: 8px;
+    background-color: var(--variant4);
+    border-radius: 99px;
+    margin: auto;
+  }
+
+  .line-card-green {
+    height: 80px;
+    width: 8px;
+    background-color:var(--color2);
+    border-radius: 99px;
+    margin: auto;
+  }
+.card-chip {
     box-shadow: 17px 17px 44.5px 0 rgba(50, 157, 156, 0.13);
     background-color: #fff;
     border: none;
@@ -268,11 +343,12 @@ label {
 }
 
 .dot {
-    height: 5px;
-    width: 5px;
+    height: 3px;
+    width: 3px;
     background-color: var(--brandColor);
     border-radius: 50%;
     display: inline-block;
+    margin: 35% auto;
   }
 
   .button-icon{

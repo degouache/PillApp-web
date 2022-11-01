@@ -13,7 +13,7 @@ import { InterceptorAuthInterceptor } from './interceptor/interceptor-auth.inter
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
