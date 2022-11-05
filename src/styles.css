@@ -373,6 +373,43 @@ label {
   color: #fff;
 }
 
+.btn-add {
+  margin: none;
+  border-radius: 5rem;
+  box-shadow: 17px 17px 44.5px 0 rgba(50, 157, 156, 0.21);
+  background-image: radial-gradient(circle at 6% 0, #7be495, #329d9c 141%);
+  padding: 0px 24px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 8em;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  color: #fff;
+}
+.btn-add:hover {
+  margin: none;
+  border-radius: 5rem;
+  box-shadow: 17px 17px 44.5px 0 rgba(50, 157, 156, 0.21);
+  padding: 0px 24px;
+  color: black;
+}
+.btn-add:focus {
+  margin: none;
+  border-radius: 5rem;
+  box-shadow: none;
+  background-image: radial-gradient(circle at 6% 0, #7be495, #329d9c 141%);
+  padding: 0px 24px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 8em;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+}
+
 /*Other elements*/
 
 .card {
@@ -443,13 +480,7 @@ label {
   margin: 35% auto;
 }
 
-.button-icon {
-  width: 15px;
-  height: 30px;
-  border-radius: 3px;
-  background-color: #e0ecde;
-  border-radius: 99px;
-}
+
 
 /*horizontal scrolling*/
 

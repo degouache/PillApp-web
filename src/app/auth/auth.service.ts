@@ -58,7 +58,7 @@ export class AuthService {
   }
 
   private saveToken(token: UserResponse): void {
-    localStorage.setItem('userResponse', JSON.stringify(token));
+    localStorage.setItem('userResponse', JSON.stringify(token)); //revisar
   }
 
   private handlerError(error: any): Observable<never> {
@@ -73,6 +73,7 @@ export class AuthService {
   //register methods
 
   public register(authData: UserRegister): Observable<UserRegister | void> {
+    this.router.navigate(['login']);
     return this.http.post<UserRegister>(`${environment.API_URL}/user`, authData);
   }
 }

@@ -22,7 +22,13 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () =>
       import('./pages/home/home.module').then((m) => m.HomeModule),
-      canLoad: [LoginGuardGuard]
+    //canLoad: [LoginGuardGuard]
+  },
+  {
+    path: 'patients-all',
+    loadChildren: () =>
+      import('./pages/patients-all/patients-all.module').then((m) => m.PatientsAllModule),
+    //canLoad: [LoginGuardGuard]
   },
 ];
 
