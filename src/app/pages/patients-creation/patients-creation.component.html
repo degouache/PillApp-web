@@ -1,10 +1,55 @@
 
-<div
-  class="card col-xs-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 mx-auto mt-5 mb-5"
->
-  <div class="card-body">
+<section class="vh-100">
+  <div class="card col-12 col-sm-8 col-md-4 col-lg-3 col-xl-3 mx-auto mt-5">
+    <div class="card-body mx-5">
+      <div>
+        <form>
+ 
+          <div class="form-group mb-5 mt-5">
+            <p class="h4">Nombre completo</p>
+            <input
+              type="text"
+              formControlName ="fullName"
+              class="form-control"
+              id="fullName"
+              aria-describedby="fullName"
+              placeholder="Nombre y apellidos"
+            />
+            
+          </div>
 
-    <h1>CREAR FICHA</h1>
+          <div class="form-group mb-5">
+            <p class="h4">Peso(Kg)</p>
+            <input
+              type="number"
+              formControlName ="weight"
+              class="form-control"
+              id="weight"
+              placeholder="Introduce el número"
+            />
+          </div>
 
+          <div class="form-group mb-5">
+            <p class="h4">Notas</p>
+            <textarea
+              type="text"
+              formControlName ="notes"
+              class="form-control"
+              id="notes"
+              placeholder="Intolerancias, alergias...."
+            ></textarea>
+          </div>
+
+          <div class="text-center mb-5">
+            <button type="submit" class="btn btn-primary mb-3">
+              crear
+            </button>
+            <button type="submit" class="btn btn-outline-primary-cancel mb-3">
+              Cancelar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
-</div>
+</section>

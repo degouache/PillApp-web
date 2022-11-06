@@ -23,7 +23,6 @@ export interface DataUpdateObject {
 }
 
 export interface PatientRegister {
-  id: 1;
   fullName: string;
   notes: string;
   kg: number;
