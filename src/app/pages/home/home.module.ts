@@ -14,12 +14,12 @@ import { CardCaredPersonHomeComponent } from 'src/app/shared/card-cared-person-h
 @NgModule({
   declarations: [
     HomeComponent,
-    HeaderComponent,
     CardDrugComponent,
     CardRememberDateComponent,
     CardRememberDoItComponent,
     CardVitalComponent,
-    CardCaredPersonHomeComponent
+    CardCaredPersonHomeComponent,
+    HeaderComponent,
   ],
   imports: [
     CommonModule,
