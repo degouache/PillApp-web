@@ -30,6 +30,12 @@ const routes: Routes = [
       import('./pages/patients-all/patients-all.module').then((m) => m.PatientsAllModule),
     //canLoad: [LoginGuardGuard]
   },
+  {
+    path: 'patients-creation',
+    loadChildren: () =>
+      import('./pages/patients-creation/patients-creation.module').then((m) => m.PatientsCreationModule),
+    //canLoad: [LoginGuardGuard]
+  },
 ];
 
 @NgModule({
