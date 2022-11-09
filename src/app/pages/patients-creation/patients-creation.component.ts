@@ -38,8 +38,8 @@ export class PatientsCreationComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+  registerSubmit(): void {}
+  // get registerDataForm() {}
+  // onReset(): void {}
 }
 
-// registerSubmit(): void {}
-// get registerDataForm() {}
-// onReset(): void {}
