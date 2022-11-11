@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { NewPatientService } from 'src/app/services/new-patient/new-patient.service';
+import { PatientRegister } from 'src/app/shared/models/patient.interface';
 
 @Component({
   selector: 'app-patients-creation',
@@ -16,7 +17,7 @@ import { NewPatientService } from 'src/app/services/new-patient/new-patient.serv
 export class PatientsCreationComponent implements OnInit {
 
   submitted = false;
-  registerForm = new FormGroup({
+  registerPatientForm = new FormGroup({
     fullName: new FormControl('', [Validators.required]),
     weight: new FormControl('', []),
     notes: new FormControl('', []),
@@ -28,18 +29,38 @@ export class PatientsCreationComponent implements OnInit {
   ) {}
 
   get fullName(): AbstractControl {
-    return this.registerForm.controls['fullName'];
+    return this.registerPatientForm.controls['fullName'];
   }
   get weight(): AbstractControl {
-    return this.registerForm.controls['weight'];
+    return this.registerPatientForm.controls['weight'];
   }
   get notes(): AbstractControl {
-    return this.registerForm.controls['notes'];
+    return this.registerPatientForm.controls['notes'];
   }
 
   ngOnInit(): void {}
-  registerSubmit(): void {}
-  // get registerDataForm() {}
-  // onReset(): void {}
+  registerSubmit(): void {
+    const formValue = this.registerPatientForm.value;
+    if (this.registerPatientForm.valid) {
+      const payload: PatientRegister = {
+            fullName: formValue.email,
+            notes: formValue.password,
+            kg: formValue.userName,
+      };
+      this.newPatientService
+        .registerPatient(payload)
+        .subscribe((patientCreated) => console.log(patientCreated));
+    }
+    
+    this.submitted = true;
+    this.onReset();
+  }
+  get registerDataForm() {
+    return this.registerPatientForm.controls;
+  }
+  onReset(): void {
+    this.submitted = false;
+    this.registerPatientForm.reset();
+  }
 }
 
