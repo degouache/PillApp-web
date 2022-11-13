@@ -16,8 +16,8 @@ export class InterceptorAuthInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
     const token = this.authService.readToken();
-
-    if (!!token) {
+    
+    if (!token) {
       this.authService.logout();
     } else {
       request = request.clone({

@@ -1,30 +1,35 @@
-
 <section class="vh-100">
   <div class="card col-12 col-sm-8 col-md-4 col-lg-3 col-xl-3 mx-auto mt-5">
     <div class="card-body mx-5">
       <div>
         <form [formGroup]="registerPatientForm" (ngSubmit)="registerSubmit()">
-
           <div class="form-group mb-5 mt-5">
             <p class="h4">Nombre completo</p>
             <input
               type="text"
-              formControlName ="fullName"
+              formControlName="fullName"
               class="form-control"
               id="fullName"
               aria-describedby="fullName"
               placeholder="Nombre y apellidos"
             />
-            
+            <div
+              *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)"
+              class="alert alert-danger mt-2"
+            >
+              <div *ngIf="fullName.getError('required')">
+                El campo nombre es obligatorio
+              </div>
+            </div>
           </div>
 
           <div class="form-group mb-5">
             <p class="h4">Peso(Kg)</p>
             <input
               type="number"
-              formControlName ="weight"
+              formControlName="kg"
               class="form-control"
-              id="weight"
+              id="kg"
               placeholder="Introduce el número"
             />
           </div>
@@ -33,7 +38,7 @@
             <p class="h4">Notas</p>
             <textarea
               type="text"
-              formControlName ="notes"
+              formControlName="notes"
               class="form-control"
               id="notes"
               placeholder="Intolerancias, alergias...."
@@ -41,10 +46,17 @@
           </div>
 
           <div class="text-center mb-5">
-            <button type="submit" class="btn btn-primary mb-3">
+            <button
+              type="submit"
+              class="btn btn-primary mb-3"
+              [disabled]="!registerPatientForm.valid"
+            >
               crear
             </button>
-            <button type="submit" class="btn btn-outline-primary-cancel mb-3">
+            <button
+              (click)="(goBack)"
+              class="btn btn-outline-primary-cancel mb-3"
+            >
               Cancelar
             </button>
           </div>

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth/auth.service';
 import {
   AbstractControl,
-  FormBuilder,
   FormControl,
   FormGroup,
   Validators,
@@ -58,7 +57,6 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private authSvc: AuthService,
-    private formBuilder: FormBuilder,
     private router: Router
   ) {}
 

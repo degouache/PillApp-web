@@ -3,15 +3,13 @@
 >
   <div class="card-body">
     <div class="mt-5">
-      <app-card-cared-person-list></app-card-cared-person-list>
-      <app-card-cared-person-list></app-card-cared-person-list>
-      <app-card-cared-person-list></app-card-cared-person-list>
-      <app-card-cared-person-list></app-card-cared-person-list>
+      <app-card-cared-person-list *ngFor="let item of (items | async)" [patient]="item"></app-card-cared-person-list>
       <app-card-cared-person-list></app-card-cared-person-list>
     </div>
 
     <div class="text-center mt-5 mb-5">
-      <button class="btn btn-add" routerLink="/patients-creation">+</button>
+      <!-- <button class="btn btn-add" routerLink="/patients-creation">+</button> -->
+      <button class="btn btn-add" (click)="add()">+</button>
     </div>
   </div>
 </div>

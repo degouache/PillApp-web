@@ -1,21 +1,16 @@
 
-export interface PatientRequest {
+export interface PatientData {
   lastUpdate: number;
   updates: UpdateObject;
-}
-
-export interface PatientResponse {
-    lastUpdate: number;
-    updates: UpdateObject;
 }
 
 export interface UpdateObject {
   type: string;
   lastUpdate: number;
-  data: DataUpdateObject;
+  data: DataObject;
 }
 
-export interface DataUpdateObject {
+export interface DataObject {
   id: number;
   fullName: string;
   notes: string;
