@@ -301,7 +301,30 @@ label {
   border: none;
 }
 
-/*Butons*/
+/*Input decorations*/
+
+.input-email {
+  padding-left: 3.8rem;
+  background-image: url("assets/drawable/icon_sobre.svg");
+  background-position: 1.2rem center;
+  background-repeat: no-repeat;
+}
+
+.input-password {
+  padding-left: 3.8rem;
+  background-image: url("assets/drawable/icon_candado.svg");
+  background-position: 1.2rem center;
+  background-repeat: no-repeat;
+}
+
+.input-person {
+  padding-left: 3.8rem;
+  background-image: url("assets/drawable/icon_person.svg");
+  background-position: 1.2rem center;
+  background-repeat: no-repeat;
+}
+
+/*Buttons*/
 
 .btn {
   border: none;
