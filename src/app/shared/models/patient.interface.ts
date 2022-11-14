@@ -1,7 +1,7 @@
 
 export interface PatientData {
   lastUpdate: number;
-  updates: UpdateObject;
+  updates: [UpdateObject];
 }
 
 export interface UpdateObject {
@@ -12,6 +12,7 @@ export interface UpdateObject {
 
 export interface DataObject {
   id: number;
+  firstLetter: string; //not from api
   fullName: string;
   notes: string;
   kg: number;

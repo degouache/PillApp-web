@@ -11,7 +11,7 @@ export class HomeCardService {
 
   constructor(private http:HttpClient) { }
 
-public getUserData(patientData: PatientData): Observable<PatientData | void> {
-    return this.http.post<PatientData>(`${environment.API_URL}/`, patientData); 
+public getUserData(): Observable<PatientData> {
+    return this.http.get<PatientData>(`${environment.API_URL}/`); 
   }
 }
