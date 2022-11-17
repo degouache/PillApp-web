@@ -53,18 +53,7 @@
     <!--///DIVIDER WITH LINK-->
 
     <div class="d-flex scrolling-wrapper mx-5">
-      <app-card-cared-person-home></app-card-cared-person-home>
-      <app-card-cared-person-home></app-card-cared-person-home>
-      <app-card-cared-person-home></app-card-cared-person-home>
-      <app-card-cared-person-home></app-card-cared-person-home>
-      <app-card-cared-person-home></app-card-cared-person-home>
-      <app-card-cared-person-home></app-card-cared-person-home>
-      <app-card-cared-person-home></app-card-cared-person-home>
-      <app-card-cared-person-home></app-card-cared-person-home>
-      <app-card-cared-person-home></app-card-cared-person-home>
-      <app-card-cared-person-home></app-card-cared-person-home>
-      <app-card-cared-person-home></app-card-cared-person-home>
-      <app-card-cared-person-home></app-card-cared-person-home>
+      <app-card-cared-person-home *ngFor="let item of (items | async)" [patient]="item"></app-card-cared-person-home>
     </div>
 
     <!--DIVIDER WITH LINK-->

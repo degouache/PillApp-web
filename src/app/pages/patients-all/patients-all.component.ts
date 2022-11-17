@@ -1,7 +1,7 @@
-import { PatientData, DataObject } from './../../shared/models/patient.interface';
+import { DataObject } from './../../shared/models/patient.interface';
 import { HomeCardService } from './../../services/home-card/home-card.service';
 import { Router } from '@angular/router';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,10 +10,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./patients-all.component.css']
 })
 export class PatientsAllComponent implements OnInit {
-  
-  
-
- 
+   
   public items : BehaviorSubject<any> = new BehaviorSubject<any>([]);
   public values : DataObject[] = [];
 
