@@ -23,16 +23,17 @@ export class HomeComponent implements OnInit {
           update.data.firstLetter = this.getFirstLetter(update.data.fullName);
           this.valuesPatient.push(update.data);
           this.itemsPatient.next(this.valuesPatient);
-          console.log(this.valuesPatient);
         }
       }
     });
     this.homeCardService.getUserData().subscribe((patientData) => {
       for (const update of patientData.updates) {
         if (update.type == 'meeting') {
+          console.log(patientData)
+          update.data.date = this.transformTime(update.data.appointmentTimestamp);
           this.valuesMeeting.push(update.data);
           this.itemsMeeting.next(this.valuesMeeting);
-          console.log(this.valuesMeeting);
+
         }
       }
     });
@@ -41,6 +42,12 @@ export class HomeComponent implements OnInit {
   public getFirstLetter(fullName: string): string {
     return fullName.charAt(0).toUpperCase();
   }
+  public transformTime(appointmentTimestamp: number): Date{
+    var epoch = appointmentTimestamp;
+    var date = new Date(0);
+    date.setUTCSeconds(epoch);
+    return date;
+  } 
 
   onLogout(): void {}
 }

@@ -13,6 +13,7 @@ export interface UpdateObject {
 export interface DataObject {
   id: number;
   firstLetter: string; //not from api
+  date: Date; //not from api
   fullName: string;
   notes: string;
   kg: number;
