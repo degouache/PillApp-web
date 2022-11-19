@@ -30,7 +30,7 @@ export class AuthService {
       .post<UserResponse>(`${environment.API_URL}/login`, authData)
       .pipe(
         map((response: UserResponse) => {
-          console.log('Response->', response);
+          // console.log('Response->', response);
           this.saveToken(response);
           this.logedIn.next(true);
           return response;

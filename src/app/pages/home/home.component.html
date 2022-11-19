@@ -22,22 +22,7 @@
     </div>
     <!--///DIVIDER WITH LINK-->
     <div class="d-flex scrolling-wrapper ms-5 me-5 mb-5">
-      <app-card-drug></app-card-drug>
-      <app-card-remember-date></app-card-remember-date>
-      <app-card-remember-do-it></app-card-remember-do-it>
-      <app-card-vital></app-card-vital>
-      <app-card-drug></app-card-drug>
-      <app-card-remember-date></app-card-remember-date>
-      <app-card-remember-do-it></app-card-remember-do-it>
-      <app-card-vital></app-card-vital>
-      <app-card-drug></app-card-drug>
-      <app-card-remember-date></app-card-remember-date>
-      <app-card-remember-do-it></app-card-remember-do-it>
-      <app-card-vital></app-card-vital>
-      <app-card-drug></app-card-drug>
-      <app-card-remember-date></app-card-remember-date>
-      <app-card-remember-do-it></app-card-remember-do-it>
-      <app-card-vital></app-card-vital>
+      <app-card-remember-date *ngFor="let item of (itemsMeeting | async)" [meeting]="item"></app-card-remember-date>
     </div>
 
     <!--DIVIDER WITH LINK-->
@@ -53,7 +38,7 @@
     <!--///DIVIDER WITH LINK-->
 
     <div class="d-flex scrolling-wrapper mx-5">
-      <app-card-cared-person-home *ngFor="let item of (items | async)" [patient]="item"></app-card-cared-person-home>
+      <app-card-cared-person-home *ngFor="let item of (itemsPatient | async)" [patient]="item"></app-card-cared-person-home>
     </div>
 
     <!--DIVIDER WITH LINK-->

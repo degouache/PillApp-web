@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-card-remember-date',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardRememberDateComponent implements OnInit {
 
+  @Input() public meeting: any;
   constructor() { }
 
   ngOnInit(): void {

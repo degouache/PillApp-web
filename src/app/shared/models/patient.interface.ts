@@ -16,6 +16,10 @@ export interface DataObject {
   fullName: string;
   notes: string;
   kg: number;
+  description: string,
+  appointmentTimestamp: number,
+  reminderTimestamp: number
+
 }
 
 export interface PatientRegister {

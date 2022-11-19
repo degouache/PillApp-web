@@ -565,12 +565,19 @@ label {
 }
 
 .dot {
-  height: 3px;
-  width: 3px;
+  height: 0.32em;
+  width: 0.32em;
   background-color: var(--brandColor);
-  border-radius: 50%;
+  border-radius: 50em;
   display: inline-block;
-  margin: 35% auto;
+  margin: 0.18em auto;
+}
+
+.dot-wrapper {
+  background-color: #e0ecde70;
+  height: fit-content;
+  padding: 0.5em;
+  border-radius: 50em;
 }
 
 
