@@ -7,10 +7,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorAuthInterceptor } from './interceptor/interceptor-auth.interceptor';
 
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
