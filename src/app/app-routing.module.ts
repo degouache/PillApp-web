@@ -22,19 +22,25 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () =>
       import('./pages/home/home.module').then((m) => m.HomeModule),
-    canLoad: [LoginGuardGuard]
+    // canLoad: [LoginGuardGuard]
   },
   {
     path: 'patients-all',
     loadChildren: () =>
       import('./pages/patients-all/patients-all.module').then((m) => m.PatientsAllModule),
-    canLoad: [LoginGuardGuard]
+    // canLoad: [LoginGuardGuard]
   },
   {
     path: 'patients-creation',
     loadChildren: () =>
       import('./pages/patients-creation/patients-creation.module').then((m) => m.PatientsCreationModule),
-    canLoad: [LoginGuardGuard]
+    // canLoad: [LoginGuardGuard]
+  },
+  {
+    path: 'patient-detail',
+    loadChildren: () =>
+      import('./pages/patient-detail/patient-detail.module').then((m) => m.PatientDetailModule),
+    // canLoad: [LoginGuardGuard]
   },
 ];
 
