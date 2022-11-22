@@ -88,7 +88,22 @@
   padding: 0.2em;
   margin: 0px;
 }
-
+.capital-icon-big {
+  font-family: "Montserrat", sans-serif;
+  font-size: 4em;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  color: white;
+  background-color: var(--brandColor);
+  border-radius: 1rem;
+  padding: 0.3em 0.4em;
+  margin: auto;
+  width: fit-content;
+}
 .small {
   font-family: "Montserrat", sans-serif;
   font-size: 0.85rem;
