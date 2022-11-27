@@ -626,8 +626,8 @@ label {
   padding: 0.5em;
   border-radius: 50em;
   position: absolute; 
-  top: 12%; 
-  right: 8%; 
+  top: 2%; 
+  right: 5%; 
 }
 .patient-card{
   position: relative; 
