@@ -1,8 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="26" height="28.118" viewBox="0 0 26 28.118">
-    <g data-name="Icons/ skull">
-        <path d="M12 0A11.93 11.93 0 0 0 0 11.8v5.7a2.433 2.433 0 0 0 2.4 2.4h0A2.377 2.377 0 0 1 5 22v3a22.34 22.34 0 0 0 14 0v-3a2.377 2.377 0 0 1 2.6-2.1h0a2.433 2.433 0 0 0 2.4-2.4v-5.7A11.93 11.93 0 0 0 12 0z" style="fill:none;stroke:#56c596;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:2px" transform="translate(1 1)"/>
-        <path data-name="Path" d="M2 2 1 0 0 2" transform="translate(12 19)" style="fill:none;stroke:#56c596;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:2px"/>
-        <path data-name="Path" d="M4.1 4.7 2.9 5A2.509 2.509 0 0 1 0 2.6v-.2A2.433 2.433 0 0 1 2.4 0h1.2a2.374 2.374 0 0 1 2.3 3h0a2.4 2.4 0 0 1-1.8 1.7z" transform="translate(5 14)" style="fill:none;stroke:#56c596;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:2px"/>
-        <path data-name="Path" d="m1.883 4.7 1.2.2a2.389 2.389 0 0 0 2.9-2.3v-.2a2.433 2.433 0 0 0-2.4-2.4h-1.2a2.374 2.374 0 0 0-2.3 3h0a2.4 2.4 0 0 0 1.8 1.7z" transform="translate(15.017 14)" style="fill:none;stroke:#56c596;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:2px"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="43" height="46.53" viewBox="0 0 43 46.53">
+  <g id="Icon_calavera" transform="translate(1.5 1.5)">
+    <g id="Icons_skull" data-name="Icons/ skull">
+      <path id="Path" d="M20,0A19.883,19.883,0,0,0,0,19.667v9.5a4.056,4.056,0,0,0,4,4H4c2.167,0,4.333,1.333,4.333,3.5v5a37.234,37.234,0,0,0,23.333,0v-5c0-2.167,2.167-3.5,4.333-3.5h0a4.056,4.056,0,0,0,4-4v-9.5A19.883,19.883,0,0,0,20,0Z" fill="none" stroke="#47cacc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+      <path id="Path-2" data-name="Path" d="M3.333,3.333,1.667,0,0,3.333" transform="translate(18.333 30)" fill="none" stroke="#47cacc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+      <path id="Path-3" data-name="Path" d="M6.833,7.833l-2,.5A4.182,4.182,0,0,1,0,4.333V4A4.056,4.056,0,0,1,4,0H6A3.957,3.957,0,0,1,9.833,5h0A4,4,0,0,1,6.833,7.833Z" transform="translate(6.667 21.667)" fill="none" stroke="#47cacc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+      <path id="Path-4" data-name="Path" d="M3.138,7.833l2,.333A3.981,3.981,0,0,0,9.971,4.333V4a4.056,4.056,0,0,0-4-4h-2A3.957,3.957,0,0,0,.138,5h0A4,4,0,0,0,3.138,7.833Z" transform="translate(23.362 21.667)" fill="none" stroke="#47cacc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
     </g>
+  </g>
 </svg>

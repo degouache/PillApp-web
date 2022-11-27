@@ -1,9 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="20.5" height="20.5" viewBox="0 0 20.5 20.5">
-    <g data-name="Iconly/Curved/Edit Square">
-        <g data-name="Edit Square">
-            <path data-name="Stroke 1" d="M9.25 0C2.313 0 0 2.313 0 9.25s2.313 9.25 9.25 9.25 9.25-2.313 9.25-9.25" style="fill:none;stroke:#56c596;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;stroke-dasharray:0 0" transform="translate(1 1)"/>
-            <path data-name="Stroke 3" d="M10.071.6a2.4 2.4 0 0 0-3.389.209S2.313 5.744.8 7.457s-.4 4.077-.4 4.077 2.5.793 4-.9l5.886-6.647A2.4 2.4 0 0 0 10.071.6z" transform="translate(7.708 1.951)" style="fill:none;stroke:#56c596;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;stroke-dasharray:0 0"/>
-            <path data-name="Stroke 5" d="m0 0 3.6 3.183" transform="translate(13.259 4.051)" style="fill:none;stroke:#56c596;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;stroke-dasharray:0 0"/>
-        </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" viewBox="0 0 43 43">
+  <g id="Icon_editar" transform="translate(1.5 1.5)">
+    <g id="Iconly_Curved_Edit_Square" data-name="Iconly/Curved/Edit Square">
+      <g id="Edit_Square" data-name="Edit Square">
+        <path id="Stroke_1" data-name="Stroke 1" d="M20,0C5,0,0,5,0,20S5,40,20,40s20-5,20-20" transform="translate(0)" fill="none" stroke="#47cacc" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" stroke-dasharray="0 0"/>
+        <path id="Stroke_3" data-name="Stroke 3" d="M21.775,1.3a5.19,5.19,0,0,0-7.328.445S5,12.42,1.725,16.124.85,24.939.85,24.939,6.264,26.654,9.494,23L22.221,8.632A5.192,5.192,0,0,0,21.775,1.3Z" transform="translate(14.503 2.057)" fill="none" stroke="#47cacc" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" stroke-dasharray="0 0"/>
+        <path id="Stroke_5" data-name="Stroke 5" d="M0,0,7.773,6.882" transform="translate(26.505 6.596)" fill="none" stroke="#47cacc" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" stroke-dasharray="0 0"/>
+      </g>
     </g>
+  </g>
 </svg>
