@@ -30,7 +30,6 @@ export class AuthService {
       .post<UserResponse>(`${environment.API_URL}/login`, authData)
       .pipe(
         map((response: UserResponse) => {
-          // console.log('Response->', response);
           this.saveToken(response);
           this.logedIn.next(true);
           return response;
@@ -75,5 +74,15 @@ export class AuthService {
   public register(authData: UserRegister): Observable<UserRegister | void> {
     this.router.navigate(['login']);
     return this.http.post<UserRegister>(`${environment.API_URL}/user`, authData);
+  }
+
+  public readUserName(): string{
+    let userName = '';
+    const userResponse = localStorage.getItem('userResponse');
+    if (!!userResponse) {
+      const user = JSON.parse(userResponse) as UserResponse;
+      userName = user.profile.userName;
+    }
+    return userName;
   }
 }

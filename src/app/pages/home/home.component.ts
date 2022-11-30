@@ -1,5 +1,5 @@
-import { prepareSyntheticListenerFunctionName } from '@angular/compiler/src/render3/util';
-import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { Component, Input, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { HomeCardService } from 'src/app/services/home-card/home-card.service';
 import { DataObject } from 'src/app/shared/models/patient.interface';
@@ -17,7 +17,8 @@ export class HomeComponent implements OnInit {
   public itemsDrug: BehaviorSubject<any> = new BehaviorSubject<any>([]);
   public valuesDrug: DataObject[] = [];
 
-  constructor(private homeCardService: HomeCardService) {}
+  @Input() public profile: any;
+  constructor(private homeCardService: HomeCardService, public authService: AuthService) {}
 
   ngOnInit(): void {
     this.homeCardService.getUserData().subscribe((patientData) => {
