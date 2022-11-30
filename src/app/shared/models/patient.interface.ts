@@ -11,6 +11,7 @@ export interface UpdateObject {
 }
 
 export interface DataObject {
+  patientId: number;
   id: number;
   firstLetter: string; //not from api
   date: Date; //not from api
@@ -20,7 +21,6 @@ export interface DataObject {
   description: string,
   appointmentTimestamp: number,
   reminderTimestamp: number
-
 }
 
 export interface PatientRegister {

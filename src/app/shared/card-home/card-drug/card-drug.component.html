@@ -2,14 +2,14 @@
     <div class="d-flex card-chip mt-2 mb- ms-2 me-2">
         <span class="line-card-green me-3"></span>
         <div>
-          <p class="small-grey">Hoy a las 18:00</p>
+          <p class="small-grey">{{drug?.date | date:'dd-MM-yyyy HH:mma'}}</p>
           <!--To do: hora binding-->
-          <p class="h6">Dalsy</p>
+          <p class="h6">{{drug?.description}}</p>
           <!--To do: nombre de medicamento binding-->
-          <p class="chip-text-green text-center">Maria hija 1</p>
+          <p class="chip-text-green text-center">{{drug?.fullName}}</p>
           <!--To do: nombre de hijo binding-->
         </div>
-        <div class="ms-5 button-icon">
+        <div class="ms-5 dot-wrapper button-icon">
           <span class="dot d-block"></span>
           <span class="dot d-block"></span>
           <span class="dot d-block"></span>

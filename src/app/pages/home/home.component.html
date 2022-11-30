@@ -23,6 +23,7 @@
     <!--///DIVIDER WITH LINK-->
     <div class="d-flex scrolling-wrapper ms-5 me-5 mb-5">
       <app-card-remember-date *ngFor="let item of (itemsMeeting | async)" [meeting]="item"></app-card-remember-date>
+      <app-card-drug *ngFor="let item of (itemsDrug | async)" [drug]="item"></app-card-drug>
     </div>
 
     <!--DIVIDER WITH LINK-->

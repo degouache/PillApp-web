@@ -1,3 +1,4 @@
+import { prepareSyntheticListenerFunctionName } from '@angular/compiler/src/render3/util';
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { HomeCardService } from 'src/app/services/home-card/home-card.service';
@@ -13,6 +14,8 @@ export class HomeComponent implements OnInit {
   public valuesPatient: DataObject[] = [];
   public itemsMeeting: BehaviorSubject<any> = new BehaviorSubject<any>([]);
   public valuesMeeting: DataObject[] = [];
+  public itemsDrug: BehaviorSubject<any> = new BehaviorSubject<any>([]);
+  public valuesDrug: DataObject[] = [];
 
   constructor(private homeCardService: HomeCardService) {}
 
@@ -24,30 +27,40 @@ export class HomeComponent implements OnInit {
           this.valuesPatient.push(update.data);
           this.itemsPatient.next(this.valuesPatient);
         }
-      }
-    });
-    this.homeCardService.getUserData().subscribe((patientData) => {
-      for (const update of patientData.updates) {
-        if (update.type == 'meeting') {
-          console.log(patientData)
+        else if (update.type == 'meeting') {
           update.data.date = this.transformTime(update.data.appointmentTimestamp);
+          update.data.fullName = this.getPatientName(update.data.patientId);
           this.valuesMeeting.push(update.data);
           this.itemsMeeting.next(this.valuesMeeting);
-
+        }
+        else if (update.type == 'drug') {
+          update.data.date = this.transformTime(update.data.reminderTimestamp);
+          update.data.fullName = this.getPatientName(update.data.patientId);
+          this.valuesDrug.push(update.data);
+          this.itemsDrug.next(this.valuesDrug);
         }
       }
     });
   }
-
-  public getFirstLetter(fullName: string): string {
+  private getFirstLetter(fullName: string): string {
     return fullName.charAt(0).toUpperCase();
   }
-  public transformTime(appointmentTimestamp: number): Date{
+  private transformTime(appointmentTimestamp: number): Date{
     var epoch = appointmentTimestamp;
     var date = new Date(0);
     date.setUTCSeconds(epoch);
     return date;
   } 
+
+  private getPatientName(id: number): string {
+    var fullName = "";
+    this.valuesPatient.forEach((patient, index)=> {
+      if(id == patient.id){
+        fullName = patient.fullName; 
+      }
+    });
+    return fullName;
+  }
 
   onLogout(): void {}
 }
