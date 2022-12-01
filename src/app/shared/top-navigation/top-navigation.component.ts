@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-top-navigation',
@@ -9,14 +10,20 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 export class TopNavigationComponent implements OnInit {
   logedIn = false;
 
-  constructor(private autheService: AuthService) {}
+  constructor(private autheService: AuthService, private location: Location) {}
 
   ngOnInit(): void {
     this.autheService.logedIn.subscribe(
       (response) => (this.logedIn = response)
     );
   }
-  onLogout(): void {
+
+  logout(): void {
     this.autheService.logout();
   }
+
+  back(): void {
+    this.location.back();
+  }
+
 }

@@ -14,7 +14,6 @@ const routes: Routes = [
 @NgModule({
   declarations: [PatientsCreationComponent],
   imports: [
-    CommonModule, RouterModule.forChild(routes), ReactiveFormsModule
-  ]
+    CommonModule, RouterModule.forChild(routes), ReactiveFormsModule]
 })
 export class PatientsCreationModule { }
