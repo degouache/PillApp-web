@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { PatientsAllComponent } from './patients-all.component';
 import { CardCaredPersonListComponent } from 'src/app/shared/card-home/card-cared-person-list/card-cared-person-list.component';
-import { TopNavigationComponent } from 'src/app/shared/top-navigation/top-navigation.component';
+import { TopNavigationModule } from "../../shared/top-navigation/top-navigation.module";
 
 const routes: Routes = [
   {
@@ -13,7 +13,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [PatientsAllComponent, CardCaredPersonListComponent, TopNavigationComponent],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  declarations: [PatientsAllComponent, CardCaredPersonListComponent],
+  imports: [CommonModule, RouterModule.forChild(routes), TopNavigationModule],
 })
 export class PatientsAllModule {}
