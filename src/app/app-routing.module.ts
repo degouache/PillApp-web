@@ -22,7 +22,7 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () =>
       import('./pages/home/home.module').then((m) => m.HomeModule),
-    // canLoad: [LoginGuardGuard] 
+    // canLoad: [LoginGuardGuard]
   },
   {
     path: 'patients-all',
@@ -37,7 +37,7 @@ const routes: Routes = [
     // canLoad: [LoginGuardGuard]
   },
   {
-    path: 'patient-detail',
+    path: 'patient-detail/:id',
     loadChildren: () =>
       import('./pages/patient-detail/patient-detail.module').then((m) => m.PatientDetailModule),
     // canLoad: [LoginGuardGuard]
