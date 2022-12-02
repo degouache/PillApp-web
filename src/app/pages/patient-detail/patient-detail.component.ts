@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PatientDetailCardService} from "../../services/patient-detail-card/patient-detail-card.service";
-import {ActivatedRoute} from "@angular/router";
-import {BehaviorSubject} from "rxjs";
+import {ActivatedRoute, ParamMap, Router} from "@angular/router";
+import {BehaviorSubject, Subscription} from "rxjs";
 import {DataObject} from "../../shared/models/patient.interface";
 
 @Component({
@@ -19,16 +19,24 @@ export class PatientDetailComponent implements OnInit {
   public valuesDrug: DataObject[] = [];
 
   constructor(
-    private route: ActivatedRoute,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
     private cardService: PatientDetailCardService
-  ) {
-    route.queryParams
-      .subscribe(params => {
-        this.loadDataForPatient(params['id']);
-      });
-  }
+  ) { }
 
-  ngOnInit() {}
+  private paramSub!: Subscription;
+  ngOnInit() {
+    this.paramSub = this.activatedRoute.paramMap
+      .subscribe( (params: ParamMap) => {
+        let paramStr = params.get('id');
+        if (paramStr != null) {
+          this.loadDataForPatient(Number.parseInt(paramStr));
+        }
+    });
+  }
+  ngOnDestroy() {
+    this.paramSub.unsubscribe();
+  }
 
   loadDataForPatient(patientId: number) {
     this.cardService.getUserData().subscribe((patientData) => {

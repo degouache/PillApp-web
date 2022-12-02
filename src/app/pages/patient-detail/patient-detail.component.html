@@ -2,22 +2,25 @@
 <div
   class="card col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 m-auto mt-5 patient-card"
 >
-  <div class="card-body m-auto mt-5">
-    <div class="dot-wrapper-big">
-      <span class="dot d-block"></span>
-      <span class="dot d-block"></span>
-      <span class="dot d-block"></span>
+  <!--PATIENT DETAILS-->
+  <div *ngFor="let patient of (itemsPatient | async)">
+    <div class="card-body m-auto mt-5">
+      <div class="dot-wrapper-big">
+        <span class="dot d-block"></span>
+        <span class="dot d-block"></span>
+        <span class="dot d-block"></span>
+      </div>
+    </div>
+    <p class="capital-icon-big">{{patient.firstLetter}}</p>
+    <p class="h4 mt-3 text-center">{{patient.fullName}}</p>
+    <p class="mt-3 text-center disabled-h4">{{patient.kg}} Kg</p>
+    <div class="text-area-card disabled-text-area m-auto">
+      <p class="">
+        {{patient.notes}} <!-- TODO multiline -->
+      </p>
     </div>
   </div>
-  <p class="capital-icon-big">A</p>
-  <p class="h4 mt-3 text-center">Juan hijo 1</p>
-  <p class="mt-3 text-center disabled-h4">45kg</p>
-  <div class="text-area-card disabled-text-area m-auto">
-    <p class="">
-      Intolerante a la lactosa. Alérgico a la amoxicilina, los ácaros del polvo
-      y los gatos
-    </p>
-  </div>
+
   <!--DIVIDER WITH LINK-->
   <p class="h4 ms-5 mt-5">Citas médicas</p>
   <div class="row justify-content-between mt-1 mb-2">
