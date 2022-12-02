@@ -2,9 +2,9 @@
   <span class="line-card-orange me-3"></span>
   <div class="m-auto">
     <!--To do: nombre de medicamento binding-->
-    <p class="h6">Traumatólogo</p>
+    <p class="h6">{{meeting?.description}}</p>
     <!--To do: hora binding-->
-    <p class="small-grey">15/08/2022</p>
+    <p class="small-grey">{{meeting?.date | date:'dd-MM-yyyy HH:mma'}}</p>
   </div>
   <div class="ms-5 dot-wrapper">
     <span class="dot d-block"></span>
