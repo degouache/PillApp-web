@@ -9,7 +9,7 @@ import { InterceptorAuthInterceptor } from './interceptor/interceptor-auth.inter
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
