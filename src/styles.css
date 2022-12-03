@@ -273,6 +273,14 @@ input::placeholder {
   text-align: left;
   color: var(--brandColor);
 }
+input[type="date" i] {
+  color: var(--brandColor);
+}
+input[type="time" i] {
+  color: var(--brandColor);
+}
+
+
 .form-control::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: var(--brandColor);
