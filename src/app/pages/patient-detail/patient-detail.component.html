@@ -1,9 +1,9 @@
 <app-top-navigation></app-top-navigation>
 <div
-  class="card col-12 col-sm-12 col-md-10 col-lg-8 col-xl-8 m-auto mt-5 patient-card"
+  class="card col-12 col-sm-12 col-md-11 col-lg-10 col-xl-8 m-auto mt-5 patient-card"
 >
   <!--PATIENT DETAILS-->
-  <div class = "card col-11 col-sm-12 col-6 col-md-10 col-lg-8 col-xl-8 m-auto py-3 mt-5" *ngFor="let patient of (itemsPatient | async)">
+  <div class = "card col-11 col-sm-11 col-6 col-md-10 col-lg-8 col-xl-8 m-auto py-3 mt-5" *ngFor="let patient of (itemsPatient | async)">
     <div class="card-body m-auto mt-5">
       <div class="dot-wrapper-big mt-5">
         <span class="dot d-block"></span>
@@ -148,4 +148,10 @@
     <app-card-staff></app-card-staff>
     <app-card-staff></app-card-staff>
   </div>
+  <div class="floating-BR">
+    <button class="btn btn-add-small">+</button>
+  </div>
 </div>
+
+
+
