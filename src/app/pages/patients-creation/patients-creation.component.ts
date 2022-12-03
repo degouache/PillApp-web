@@ -48,13 +48,15 @@ export class PatientsCreationComponent implements OnInit {
       };
       this.newPatientService
         .registerPatient(payload)
-        .subscribe((patientCreated) => console.log(patientCreated));
+        .subscribe((patientCreated) => {
+          console.log(patientCreated);
+          this.onReset();
+        });
     }
 
     this.submitted = true;
-    this.onReset();
   }
-  
+
   get registerDataForm() {
     return this.registerPatientForm.controls;
   }
