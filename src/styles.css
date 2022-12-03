@@ -546,11 +546,6 @@ label {
   line-height: 1;
   letter-spacing: normal;
 }
-.floating-BR{
-  position: fixed;
-	bottom: 5vh;
-	right: 5vh;
-}
 .btn-add-small {
   margin: 0px;
   border-radius: 5rem;
@@ -586,6 +581,38 @@ label {
   font-style: normal;
   line-height: 1;
   letter-spacing: normal;
+}
+.dropup {
+  position: fixed;
+	bottom: 5vh;
+	right: 5vh;
+}
+
+.dropup-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 25vw;
+  bottom: 50px;
+  z-index: 1;
+  right: 0;
+  border-radius: 1em;
+}
+
+.dropup-content a {
+  color: var(--brandColor);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropup-content a:hover {  
+  background-color: #e0ecde70;
+  border-radius: 1em;
+}
+
+.dropup:hover .dropup-content {
+  display: block;
 }
 
 /*Other elements*/
