@@ -1,1 +1,71 @@
-<p>remember-do-it works!</p>
+<section class="vh-100">
+    <div class="card col-12 col-sm-8 col-md-4 col-lg-3 col-xl-3 mx-auto mt-5">
+      <div class="card-body mx-5">
+        <div>
+          <!-- <form [formGroup]="registerPatientForm" (ngSubmit)="registerSubmit()"> -->
+            <form>
+            <div class="form-group mb-5 mt-5">
+              <p class="h4">Nombre del recordatorio</p>
+              <input
+                type="text"
+                formControlName="remember-name"
+                class="form-control"
+                id="remember-name"
+                aria-describedby="remember-name"
+                placeholder="¿Qué quieres recordar?"
+              />
+              <!-- <div
+                *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)"
+                class="alert alert-danger mt-2"
+              >
+                <div *ngIf="fullName.getError('required')">
+                  El campo nombre es obligatorio
+                </div>
+              </div> -->
+            </div>
+  
+            <div class="form-group mb-5">
+              <p class="h4">Fecha y hora</p>
+              <input
+                type="date"
+                formControlName="date"
+                class="form-control mb-3"
+                id="date"
+                placeholder="Introduce la hora"
+              />
+              <input
+              type="time"
+              formControlName="time"
+              class="form-control"
+              id="time"
+              placeholder="Introduce la hora"
+            />
+            </div>
+    
+            <div class="text-center mb-5">
+              <!-- <button
+                type="submit"
+                class="btn btn-primary mb-3"
+                [disabled]="!registerPatientForm.valid"
+              >
+                crear
+              </button> -->
+              <button
+                type="submit"
+                class="btn btn-primary mb-3"
+              >
+                crear
+              </button>
+              <!-- <button
+                (click)="(goBack)"
+                class="btn btn-outline-primary-cancel mb-3"
+              >
+                Cancelar
+              </button> -->
+              <a class="btn btn-outline-primary-cancel" href="javascript:javascript:history.go(-1)">Cancelar</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
