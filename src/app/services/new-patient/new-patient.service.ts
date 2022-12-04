@@ -14,5 +14,4 @@ export class NewPatientService {
   public registerPatient(patientData: PatientRegister): Observable<PatientRegister | void> {
     return this.http.post<PatientRegister>(`${environment.API_URL}/patient`, patientData); 
   }
-
 }
