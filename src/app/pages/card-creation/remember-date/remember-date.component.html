@@ -8,10 +8,10 @@
               <p class="h4">Nombre de la cita</p>
               <input
                 type="text"
-                formControlName="date-name"
+                formControlName="title"
                 class="form-control"
-                id="date-name"
-                aria-describedby="date-name"
+                id="title"
+                aria-describedby="title"
                 placeholder="¿De qué es la cita?"
               />
               <!-- <div
@@ -41,6 +41,24 @@
               placeholder="Introduce la hora"
             />
             </div>
+
+            <div class="form-group mb-5">
+              <p class="h4">Recordatorio de la cita</p>
+              <input
+                type="date"
+                formControlName="dateReminder"
+                class="form-control mb-3"
+                id="dateReminder"
+                placeholder="Introduce la hora"
+              />
+              <input
+              type="time"
+              formControlName="timeReminder"
+              class="form-control"
+              id="timeReminder"
+              placeholder="Introduce la hora"
+            />
+            </div>
     
             <div class="text-center mb-5">
               <!-- <button
@@ -56,13 +74,12 @@
               >
                 crear
               </button>
-              <!-- <button
+              <button
                 (click)="(goBack)"
                 class="btn btn-outline-primary-cancel mb-3"
               >
                 Cancelar
-              </button> -->
-              <a class="btn btn-outline-primary-cancel" href="javascript:javascript:history.go(-1)">Cancelar</a>
+              </button>
             </div>
           </form>
         </div>

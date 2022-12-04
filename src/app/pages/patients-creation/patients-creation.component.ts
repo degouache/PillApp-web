@@ -49,7 +49,6 @@ export class PatientsCreationComponent implements OnInit {
       this.newPatientService
         .registerPatient(payload)
         .subscribe((patientCreated) => {
-          console.log(patientCreated);
           this.onReset();
         });
     }
