@@ -1,4 +1,7 @@
+import { DataCreationService } from './../../../services/data-creation/data-creation.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-remember-do-it',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RememberDoItComponent implements OnInit {
 
-  constructor() { }
+  private patientId: number = 0;
 
-  ngOnInit(): void {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private dataCreationService:DataCreationService) { }
+  
+  private paramSub!: Subscription;
+  ngOnInit() {
+    this.paramSub = this.activatedRoute.paramMap.subscribe(
+      (params: ParamMap) => {
+        let paramStr = params.get('id');
+        if (paramStr != null) {
+          this.patientId = Number.parseInt(paramStr)
+        }
+      }
+    );
   }
-
+  ngOnDestroy() {
+    this.paramSub.unsubscribe();
+  }
 }

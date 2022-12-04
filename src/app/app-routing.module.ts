@@ -37,43 +37,43 @@ const routes: Routes = [
     // canLoad: [LoginGuardGuard]
   },
   {
-    path: 'patient-detail/:id',
+    path: 'patient/:id',
     loadChildren: () =>
       import('./pages/patient-detail/patient-detail.module').then((m) => m.PatientDetailModule),
     // canLoad: [LoginGuardGuard]
   },
   {
-    path: 'drug-prescription',
+    path: 'patient/:id/drug-prescription',
     loadChildren: () =>
       import('./pages/card-creation/drug-prescription/drug-prescription.module').then((m) => m.DrugPrescriptionModule),
     // canLoad: [LoginGuardGuard]
   },
   {
-    path: 'drug-take',
+    path: 'patient/:id/drug-take',
     loadChildren: () =>
       import('./pages/card-creation/drug-take/drug-take.module').then((m) => m.DrugTakeModule),
     // canLoad: [LoginGuardGuard]
   },
   {
-    path: 'remember-date',
+    path: 'patient/:id/remember-date',
     loadChildren: () =>
       import('./pages/card-creation/remember-date/remember-date.module').then((m) => m.RememberDateModule),
     // canLoad: [LoginGuardGuard]
   },
   {
-    path: 'remember-do-it',
+    path: 'patient/:id/remember-do-it',
     loadChildren: () =>
       import('./pages/card-creation/remember-do-it/remember-do-it.module').then((m) => m.RememberDoItModule),
     // canLoad: [LoginGuardGuard]
   },
   {
-    path: 'vital-lecture',
+    path: 'patient/:id/vital-lecture',
     loadChildren: () =>
       import('./pages/card-creation/vital-lecture/vital-lecture.module').then((m) => m.VitalLectureModule),
     // canLoad: [LoginGuardGuard]
   },
   {
-    path: 'vital-lecture-prescription',
+    path: 'patient/:id/vital-lecture-prescription',
     loadChildren: () =>
       import('./pages/card-creation/vital-lecture-prescription/vital-lecture-prescription.module').then((m) => m.VitalLecturePrescriptionModule),
     // canLoad: [LoginGuardGuard]
