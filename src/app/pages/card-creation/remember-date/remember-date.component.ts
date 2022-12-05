@@ -93,8 +93,6 @@ export class RememberDateComponent implements OnInit {
   }
 
   currentDate() {
-    console.log("llama a fecha")
-    console.log(new Date().toISOString().split('T')[0])
     return new Date().toISOString().split('T')[0];
   }
 
@@ -113,8 +111,7 @@ export class RememberDateComponent implements OnInit {
   }
 
   goBack():void{
+    console.log("cancel hace click")
     this.router.navigate(['/patient/'+ this.patientId]);
   }
-
-
 }
