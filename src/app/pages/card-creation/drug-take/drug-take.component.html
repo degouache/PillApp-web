@@ -18,8 +18,9 @@
               class="form-control form-select"
               id="drug"
               aria-describedby="drug"
+              (change)="onDrugSelected()"
             >
-              <option *ngFor="let item of (itemsDrug | async)" [value]="item.id" (change)="onDrugSelected(item)">{{item.description}}</option>
+              <option *ngFor="let item of (itemsDrug | async)" [value]="item.id">{{item.description}}</option>
             </select>
             <div
               *ngIf="drug.invalid && (drug.dirty || drug.touched)"

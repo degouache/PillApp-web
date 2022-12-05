@@ -87,15 +87,17 @@ export class DrugTakeComponent implements OnInit {
           this.itemsDrug.next(this.valuesDrug);
         }
       }
-      if (this.valuesDrug.length > 0) {
-        this.onDrugSelected(this.valuesDrug[0]);
-      }
     });
   }
 
-  onDrugSelected(drugPlan: DataObject) {
-    this.registerDrugActionForm.controls['drug'].setValue(drugPlan.id);
-    this.registerDrugActionForm.controls['dose'].setValue(drugPlan.dosePerIntake);
+  onDrugSelected() {
+    let selectedId = this.registerDrugActionForm.controls['drug'].value;
+    for (let drugPlan of this.valuesDrug) {
+      if (drugPlan.id == selectedId) {
+        this.registerDrugActionForm.controls['drug'].setValue(drugPlan.id);
+        this.registerDrugActionForm.controls['dose'].setValue(drugPlan.dosePerIntake);
+      }
+    }
   }
 
   createTimestamp(date: string, time: string): number {
