@@ -1,1 +1,98 @@
-<p>drug-take works!</p>
+<section class="vh-100">
+  <div class="card col-12 col-sm-8 col-md-4 col-lg-3 col-xl-3 mx-auto mt-5">
+    <div class="card-body mx-5">
+      <div>
+        <form [formGroup]="registerDrugActionForm" (ngSubmit)="registerSubmit()">
+
+          <div class="form-group mb-5 mt-5">
+            <p class="h4">Tipo de toma</p>
+            <select class="form-control form-select">
+              <option>Medicamento prescrito</option>
+            </select>
+          </div>
+
+          <div class="form-group mb-5 mt-5">
+            <p class="h4">Selecciona medicamento</p>
+            <select
+              formControlName="drug"
+              class="form-control form-select"
+              id="drug"
+              aria-describedby="drug"
+            >
+              <option *ngFor="let item of (itemsDrug | async)" [value]="item.id" (change)="onDrugSelected(item)">{{item.description}}</option>
+            </select>
+            <div
+              *ngIf="drug.invalid && (drug.dirty || drug.touched)"
+              class="alert alert-danger mt-2"
+            >
+              <div *ngIf="drug.getError('required')">
+                El medicamento es obligatorio
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group mb-5">
+            <p class="h4">Fecha y hora</p>
+            <input
+              type="date"
+              formControlName="date"
+              class="form-control mb-3"
+              id="date"
+              placeholder="Introduce la fecha"
+            />
+            <input
+              type="time"
+              formControlName="time"
+              class="form-control"
+              id="time"
+              placeholder="Introduce la hora"
+            />
+          </div>
+
+          <div class="form-group mb-5 mt-5">
+            <p class="h4">Cantidad de la dosis</p>
+            <input
+              type="text"
+              formControlName="dose"
+              class="form-control"
+              id="dose"
+              aria-describedby="dose"
+              placeholder="¿Qué dosis se ha suministrado?"
+            />
+            <div
+              *ngIf="dose.invalid && (dose.dirty || dose.touched)"
+              class="alert alert-danger mt-2"
+            >
+              <div *ngIf="dose.getError('required')">
+                El campo nombre es obligatorio
+              </div>
+            </div>
+          </div>
+
+
+          <div class="text-center mb-5">
+            <!-- <button
+              type="submit"
+              class="btn btn-primary mb-3"
+              [disabled]="!registerPatientForm.valid"
+            >
+              crear
+            </button> -->
+            <button
+              type="submit"
+              class="btn btn-primary mb-3"
+            >
+              crear
+            </button>
+            <button
+              (click)="(goBack)"
+              class="btn btn-outline-primary-cancel mb-3"
+            >
+              Cancelar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
