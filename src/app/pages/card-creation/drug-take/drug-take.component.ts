@@ -6,7 +6,6 @@ import {DrugTakeSelectorService} from "../../../services/drug-take-selector/drug
 import {DataObject} from "../../../shared/models/patient.interface";
 import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
 import {DrugActionData} from "../../../shared/models/data-creation.interface";
-import {Time} from "@angular/common";
 
 @Component({
   selector: 'app-drug-take',
@@ -99,19 +98,15 @@ export class DrugTakeComponent implements OnInit {
     this.registerDrugActionForm.controls['dose'].setValue(drugPlan.dosePerIntake);
   }
 
-  createTimestamp(date: Date, time: Time): number {
-    let someDate = date;
-    someDate.setHours(time.hours);
-    someDate.setMinutes(time.minutes);
-
-    return someDate.getTime() / 1000;
+  createTimestamp(date: string, time: string): number {
+    return new Date(date + "T" + time).getTime() / 1000;
   }
 
-  currentDate() {
+  currentDate() { // return current date in format "yyyy-mm-dd"
     return new Date().toISOString().split('T')[0];
   }
 
-  currentTime() {
+  currentTime() {  // returns current time in format HH:MM
     return new Date().toLocaleString('es-ES', {
       hour: '2-digit',
       minute: '2-digit',
