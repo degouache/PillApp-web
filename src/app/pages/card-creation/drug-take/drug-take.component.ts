@@ -112,8 +112,11 @@ export class DrugTakeComponent implements OnInit {
   }
 
   currentTime() {
-    let now = new Date();
-    return now.getHours() + ":" + now.getMinutes();
+    return new Date().toLocaleString('es-ES', {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    })
   }
 
   onReset(): void {
