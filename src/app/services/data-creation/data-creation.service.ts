@@ -22,7 +22,7 @@ export class DataCreationService {
     );
   }
 
-  public registerDrugActiont(
+  public registerDrugAction(
     drugAction: DrugActionData
   ): Observable<DrugActionData | void> {
     return this.http.post<DrugActionData>(
