@@ -84,11 +84,8 @@ export class RememberDateComponent implements OnInit {
     }
   }
 
-  createTimestamp(date: Date, time: Time): number {
-    var someDate = date;
-    someDate.setHours(time.hours);
-    someDate.setMinutes(time.minutes);
-
+  createTimestamp(date: string, time: string): number {
+    var someDate = new Date (date+"T"+ time);
     return someDate.getTime() / 1000;
   }
 
@@ -111,7 +108,6 @@ export class RememberDateComponent implements OnInit {
   }
 
   goBack():void{
-    console.log("cancel hace click")
     this.router.navigate(['/patient/'+ this.patientId]);
   }
 }
