@@ -1,11 +1,6 @@
 import { Time } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import {
-  AbstractControl,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { DataCreationService } from 'src/app/services/data-creation/data-creation.service';
@@ -22,10 +17,10 @@ export class RememberDateComponent implements OnInit {
   submitted = false;
   registerRememberDateForm = new FormGroup({
     title: new FormControl('', Validators.required),
-    date: new FormControl('', Validators.required),
-    time: new FormControl('', Validators.required),
-    dateReminder: new FormControl('', []),
-    timeReminder: new FormControl('', []),
+    date: new FormControl(this.currentDate(), Validators.required),
+    time: new FormControl(this.currentTime(), Validators.required),
+    dateReminder: new FormControl(this.currentDate(), []),
+    timeReminder: new FormControl(this.currentTime(), []),
   });
 
   constructor(
@@ -66,7 +61,7 @@ export class RememberDateComponent implements OnInit {
     this.paramSub.unsubscribe();
   }
 
-  regiserSubmit(): void {
+  registerSubmit(): void {
     const formValue = this.registerRememberDateForm.value;
     if (this.registerRememberDateForm.valid) {
       const payload: MeetingData = {
@@ -97,6 +92,20 @@ export class RememberDateComponent implements OnInit {
     return someDate.getTime() / 1000;
   }
 
+  currentDate() {
+    console.log("llama a fecha")
+    console.log(new Date().toISOString().split('T')[0])
+    return new Date().toISOString().split('T')[0];
+  }
+
+  currentTime() {
+    return new Date().toLocaleString('es-ES', {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    })
+  }
+
   onReset(): void {
     this.submitted = false;
     this.registerRememberDateForm.reset();
@@ -106,5 +115,6 @@ export class RememberDateComponent implements OnInit {
   goBack():void{
     this.router.navigate(['/patient/'+ this.patientId]);
   }
+
 
 }
