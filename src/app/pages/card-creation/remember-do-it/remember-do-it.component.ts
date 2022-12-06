@@ -1,4 +1,4 @@
-import { DataCreationService } from './../../../services/data-creation/data-creation.service';
+import { DataCreationService } from '../../../services/data-creation/data-creation.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -10,10 +10,10 @@ import { Subscription } from 'rxjs';
 })
 export class RememberDoItComponent implements OnInit {
 
-  private patientId: number = 0;
+  public patientId: number = 0;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private dataCreationService:DataCreationService) { }
-  
+
   private paramSub!: Subscription;
   ngOnInit() {
     this.paramSub = this.activatedRoute.paramMap.subscribe(

@@ -9,10 +9,10 @@ import { DataCreationService } from 'src/app/services/data-creation/data-creatio
   styleUrls: ['./drug-prescription.component.css']
 })
 export class DrugPrescriptionComponent implements OnInit {
-  private patientId: number = 0;
+  public patientId: number = 0;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private dataCreationService:DataCreationService) { }
-  
+
   private paramSub!: Subscription;
   ngOnInit() {
     this.paramSub = this.activatedRoute.paramMap.subscribe(

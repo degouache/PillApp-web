@@ -13,7 +13,7 @@ import {DrugActionData} from "../../../shared/models/data-creation.interface";
   styleUrls: ['./drug-take.component.css']
 })
 export class DrugTakeComponent implements OnInit {
-  private patientId: number = 0;
+  public patientId: number = 0;
 
   public itemsDrug: BehaviorSubject<any> = new BehaviorSubject<any>([]);
   private valuesDrug: DataObject[] = [];
