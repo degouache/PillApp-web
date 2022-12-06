@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardDrugPatientComponent implements OnInit {
 
+  @Input() public drug: any;
   constructor() { }
 
   ngOnInit() {
