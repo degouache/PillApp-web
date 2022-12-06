@@ -99,7 +99,7 @@
     <app-card-vital-take-patient *ngFor="let item of (itemsVitalTake | async)" [data]="item"></app-card-vital-take-patient>
   </div>
   <!--DIVIDER WITH LINK-->
-  <p class="h4 ms-5 mt-5">Otros encargados</p>
+  <p class="h4 ms-5 mt-5">Encargados</p>
   <div class="row justify-content-between mt-1 mb-2">
     <div class="col-6 col-sm-7 col-md-7 col-lg-8 col-xl-8 align-self-center">
       <div class="separation-line ms-5"></div>
@@ -112,15 +112,7 @@
   </div>
   <!--Cards-->
   <div class="d-flex scrolling-wrapper ms-5 me-5 mb-5">
-    <app-card-staff></app-card-staff>
-    <app-card-staff></app-card-staff>
-    <app-card-staff></app-card-staff>
-    <app-card-staff></app-card-staff>
-    <app-card-staff></app-card-staff>
-    <app-card-staff></app-card-staff>
-    <app-card-staff></app-card-staff>
-    <app-card-staff></app-card-staff>
-    <app-card-staff></app-card-staff>
+    <app-card-staff *ngFor="let item of (itemsStaff | async)" [profile]="item"></app-card-staff>
   </div>
 
   <div class="dropup">

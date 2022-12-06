@@ -1,3 +1,4 @@
+import {ProfileObject} from "./user.interface";
 
 export interface PatientData {
   lastUpdate: number;
@@ -29,6 +30,7 @@ export interface DataObject {
   duration: number;
   dosePerIntake: string;
   dose: string;
+  userProfiles: ProfileObject[];
 }
 
 export interface PatientRegister {

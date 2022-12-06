@@ -3,6 +3,7 @@ import {PatientDetailCardService} from '../../services/patient-detail-card/patie
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {BehaviorSubject, Subscription} from 'rxjs';
 import {DataObject} from '../../shared/models/patient.interface';
+import {ProfileObject} from "../../shared/models/user.interface";
 
 @Component({
   selector: 'app-patient-detail',
@@ -23,6 +24,8 @@ export class PatientDetailComponent implements OnInit {
   public valuesDrugTake: DataObject[] = [];
   public itemsVitalTake: BehaviorSubject<any> = new BehaviorSubject<any>([]);
   public valuesVitalTake: DataObject[] = [];
+  public itemsStaff: BehaviorSubject<any> = new BehaviorSubject<any>([]);
+  public valuesStaff: ProfileObject[] = [];
 
 
   private patientId: number = 0;
@@ -89,6 +92,8 @@ export class PatientDetailComponent implements OnInit {
           this.itemsDrugTake.next(this.valuesDrugTake);
         }
       }
+      this.itemsStaff.next(this.valuesPatient[0].userProfiles);
+      console.log("itemStaff", this.itemsStaff);
     });
   }
 

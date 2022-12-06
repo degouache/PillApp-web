@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {DataObject} from "../../models/patient.interface";
+import {ProfileObject} from "../../models/user.interface";
 
 @Component({
   selector: 'app-card-staff',
@@ -8,10 +8,19 @@ import {DataObject} from "../../models/patient.interface";
 })
 export class CardStaffComponent implements OnInit {
 
-  @Input() public data?: DataObject;
+  @Input() public profile?: ProfileObject;
+
+  public firstLetter?: string;
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.firstLetter = this.getFirstLetter(this.profile?.userName);
+  }
+
+  private getFirstLetter(fullName?: string): string {
+    if (fullName == undefined) return "";
+    return fullName.charAt(0).toUpperCase();
+  }
 
 }
