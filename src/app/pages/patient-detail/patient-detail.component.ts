@@ -92,30 +92,33 @@ export class PatientDetailComponent implements OnInit {
   }
 
   loadFakeDataForPatient() {  // hardcoded data that is not in the API
-    const EIGHT_HOURS = 60*60*8;
-    const NOW = new Date().getTime() / 1000;
-    const TIME1 = NOW - EIGHT_HOURS;
-    const TIME2 = TIME1 - EIGHT_HOURS;
-    const TIME3 = TIME2 - EIGHT_HOURS;
-    const TIME4 = TIME3 - EIGHT_HOURS;
+    const now = new Date();
+    now.setHours(now.getHours()-8);
+    const time1 = now.toISOString();
+    now.setHours(now.getHours()-8);
+    const time2 = now.toISOString();
+    now.setHours(now.getHours()-8);
+    const time3 = now.toISOString();
+    now.setHours(now.getHours()-8);
+    const time4 = now.toISOString();
 
-    this.valuesVital.push(JSON.parse(`{"vitalId": 1, "description": "Temperatura", "period": ${EIGHT_HOURS}}`));
-    this.valuesVital.push(JSON.parse(`{"vitalId": 2, "description": "Ritmo cardiaco", "period": ${EIGHT_HOURS}}`));
-    this.valuesVital.push(JSON.parse(`{"vitalId": 3, "description": "Tensión arterial", "period": ${EIGHT_HOURS}}`));
+    this.valuesVital.push(JSON.parse(`{"vitalId": 1, "description": "Temperatura", "period": ${60*60*8}}`));
+    this.valuesVital.push(JSON.parse(`{"vitalId": 2, "description": "Ritmo cardiaco", "period": ${60*60*8}}`));
+    this.valuesVital.push(JSON.parse(`{"vitalId": 3, "description": "Tensión arterial", "period": ${60*60*8}}`));
     this.itemsVital.next(this.valuesVital);
 
-    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 1, "description": "37º", "actionTimestamp": ${TIME1}}`));
-    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 2, "description": "90 ppm", "actionTimestamp": ${TIME1}}`));
-    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 3, "description": "14/9", "actionTimestamp": ${TIME1}}`));
-    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 1, "description": "37º", "actionTimestamp": ${TIME2}}`));
-    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 2, "description": "90 ppm", "actionTimestamp": ${TIME2}}`));
-    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 3, "description": "14/9", "actionTimestamp": ${TIME2}}`));
-    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 1, "description": "37º", "actionTimestamp": ${TIME3}}`));
-    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 2, "description": "90 ppm", "actionTimestamp": ${TIME3}}`));
-    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 3, "description": "14/9", "actionTimestamp": ${TIME3}}`));
-    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 1, "description": "37º", "actionTimestamp": ${TIME4}}`));
-    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 2, "description": "90 ppm", "actionTimestamp": ${TIME4}}`));
-    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 3, "description": "14/9", "actionTimestamp": ${TIME4}}`));
+    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 1, "description": "37º", "date": "${time1}"}`));
+    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 2, "description": "90 ppm", "date": "${time1}"}`));
+    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 3, "description": "14/9", "date": "${time1}"}`));
+    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 1, "description": "37º", "date": "${time2}"}`));
+    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 2, "description": "90 ppm", "date": "${time2}"}`));
+    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 3, "description": "14/9", "date": "${time2}"}`));
+    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 1, "description": "37º", "date": "${time3}"}`));
+    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 2, "description": "90 ppm", "date": "${time3}"}`));
+    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 3, "description": "14/9", "date": "${time3}"}`));
+    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 1, "description": "37º", "date": "${time4}"}`));
+    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 2, "description": "90 ppm", "date": "${time4}"}`));
+    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 3, "description": "14/9", "date": "${time4}"}`));
     this.itemsVitalTake.next(this.valuesVitalTake);
 
     console.log("valuesVital", this.valuesVital);
