@@ -84,6 +84,7 @@ export class PatientDetailComponent implements OnInit {
         ) {
           update.data.date = this.transformTime(update.data.doneTimestamp);
           update.data.fullName = this.getPatientName(update.data.patientId);
+          update.data.description = this.getDrugName(update.data.drugId);
           this.valuesDrugTake.push(update.data);
           this.itemsDrugTake.next(this.valuesDrugTake);
         }
@@ -140,11 +141,21 @@ export class PatientDetailComponent implements OnInit {
 
   private getPatientName(id: number): string {
     var fullName = '';
-    this.valuesPatient.forEach((patient, index) => {
+    this.valuesPatient.forEach((patient) => {
       if (id == patient.id) {
         fullName = patient.fullName;
       }
     });
     return fullName;
+  }
+
+  private getDrugName(id: number): string {
+    var drugDescription = '';
+    this.valuesDrug.forEach((drug) => {
+      if (id == drug.id) {
+        drugDescription = drug.description;
+      }
+    });
+    return drugDescription;
   }
 }
