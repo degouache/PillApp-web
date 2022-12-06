@@ -1,10 +1,10 @@
 <app-top-navigation [backUrl]="'/patient/'+patientId"></app-top-navigation>
-
+<!-- 
 <section class="vh-100">
     <div class="card col-12 col-sm-8 col-md-4 col-lg-3 col-xl-3 mx-auto mt-5">
       <div class="card-body mx-5">
         <div>
-          <!-- <form [formGroup]="registerPatientForm" (ngSubmit)="registerSubmit()"> -->
+          <form [formGroup]="registerPatientForm" (ngSubmit)="registerSubmit()">
             <form>
             <div class="form-group mb-5 mt-5">
               <p class="h4">Nombre del recordatorio</p>
@@ -16,14 +16,14 @@
                 aria-describedby="remember-name"
                 placeholder="¿Qué quieres recordar?"
               />
-              <!-- <div
+              <div
                 *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)"
                 class="alert alert-danger mt-2"
               >
                 <div *ngIf="fullName.getError('required')">
                   El campo nombre es obligatorio
                 </div>
-              </div> -->
+              </div>
             </div>
 
             <div class="form-group mb-5">
@@ -45,29 +45,55 @@
             </div>
 
             <div class="text-center mb-5">
-              <!-- <button
+              <button
                 type="submit"
                 class="btn btn-primary mb-3"
                 [disabled]="!registerPatientForm.valid"
               >
                 crear
-              </button> -->
+              </button>
               <button
                 type="submit"
                 class="btn btn-primary mb-3"
               >
                 crear
               </button>
-              <!-- <button
+              <button
                 (click)="(goBack)"
                 class="btn btn-outline-primary-cancel mb-3"
               >
                 Cancelar
-              </button> -->
+              </button>
               <a class="btn btn-outline-primary-cancel" [href]="'/patient/'+patientId">Cancelar</a>
             </div>
           </form>
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
+
+  <div
+  class="card col-xs-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 mx-auto mt-5 mb-5"
+>
+  <div class="card-body">
+    <div>
+      <div class="mt-5 ms-5">
+        <h1 class="h1">Lo sentimos,</h1>
+        <!--To do: nombre de usuario binding-->
+        <p class="h5">
+          Estamos trabajando para implementar esta funcionalidad lo antes
+          posible
+        </p>
+      </div>
+    </div>
+    <!--DIVIDER WITH LINK-->
+    <p class="h4 ms-5 mt-1">Disculpa las molestias</p>
+  </div>
+  <div class="col-8 col-sm-6 col-md-6 col-lg-6 col-xl-4 mb-5 m-auto">
+    <img
+    src=".\assets\drawable\underConstruction.svg"
+    class="img-fluid"
+    alt="page under construction"
+  />
+  </div>
+ </div>
