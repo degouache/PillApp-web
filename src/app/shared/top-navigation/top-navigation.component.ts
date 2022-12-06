@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { Location } from '@angular/common';
 
@@ -9,6 +9,7 @@ import { Location } from '@angular/common';
 })
 export class TopNavigationComponent implements OnInit {
   logedIn = false;
+  @Input() public backUrl : string = "/home";
 
   constructor(private autheService: AuthService, private location: Location) {}
 

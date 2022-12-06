@@ -11,7 +11,7 @@ import { MeetingData } from 'src/app/shared/models/data-creation.interface';
   styleUrls: ['./remember-date.component.css'],
 })
 export class RememberDateComponent implements OnInit {
-  private patientId: number = 0;
+  public patientId: number = 0;
 
   submitted = false;
   registerRememberDateForm = new FormGroup({
