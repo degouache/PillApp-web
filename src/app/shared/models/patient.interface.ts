@@ -13,6 +13,7 @@ export interface UpdateObject {
 export interface DataObject {
   patientId: number;
   drugId: number;
+  vitalId: number;
   id: number;
   firstLetter: string; //not from api
   date: Date; //not from api

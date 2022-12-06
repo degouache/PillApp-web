@@ -10,14 +10,21 @@ import {DataObject} from '../../shared/models/patient.interface';
   styleUrls: ['./patient-detail.component.css'],
 })
 export class PatientDetailComponent implements OnInit {
+
   public itemsPatient: BehaviorSubject<any> = new BehaviorSubject<any>([]);
   public valuesPatient: DataObject[] = [];
   public itemsMeeting: BehaviorSubject<any> = new BehaviorSubject<any>([]);
   public valuesMeeting: DataObject[] = [];
   public itemsDrug: BehaviorSubject<any> = new BehaviorSubject<any>([]);
   public valuesDrug: DataObject[] = [];
-  public itemsDrugAction: BehaviorSubject<any> = new BehaviorSubject<any>([]);
-  public valuesDrugAction: DataObject[] = [];
+  public itemsVital: BehaviorSubject<any> = new BehaviorSubject<any>([]);
+  public valuesVital: DataObject[] = [];
+  public itemsDrugTake: BehaviorSubject<any> = new BehaviorSubject<any>([]);
+  public valuesDrugTake: DataObject[] = [];
+  public itemsVitalTake: BehaviorSubject<any> = new BehaviorSubject<any>([]);
+  public valuesVitalTake: DataObject[] = [];
+
+
   private patientId: number = 0;
 
   constructor(
@@ -77,19 +84,44 @@ export class PatientDetailComponent implements OnInit {
         ) {
           update.data.date = this.transformTime(update.data.doneTimestamp);
           update.data.fullName = this.getPatientName(update.data.patientId);
-          this.valuesDrugAction.push(update.data);
-          this.itemsDrugAction.next(this.valuesDrugAction);
+          this.valuesDrugTake.push(update.data);
+          this.itemsDrugTake.next(this.valuesDrugTake);
         }
       }
-      console.log("patient", this.valuesPatient);
-      console.log("meeting", this.valuesMeeting);
-      console.log("drug", this.valuesDrug);
-      console.log("drugAction", this.valuesDrugAction);
     });
   }
 
   loadFakeDataForPatient() {  // hardcoded data that is not in the API
-    // TODO
+    const EIGHT_HOURS = 60*60*8;
+    const NOW = new Date().getTime() / 1000;
+    const TIME1 = NOW - EIGHT_HOURS;
+    const TIME2 = TIME1 - EIGHT_HOURS;
+    const TIME3 = TIME2 - EIGHT_HOURS;
+    const TIME4 = TIME3 - EIGHT_HOURS;
+
+    this.valuesVital.push(JSON.parse(`{"vitalId": 1, "description": "Temperatura", "period": ${EIGHT_HOURS}}`));
+    this.valuesVital.push(JSON.parse(`{"vitalId": 2, "description": "Ritmo cardiaco", "period": ${EIGHT_HOURS}}`));
+    this.valuesVital.push(JSON.parse(`{"vitalId": 3, "description": "Tensión arterial", "period": ${EIGHT_HOURS}}`));
+    this.itemsVital.next(this.valuesVital);
+
+    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 1, "description": "37º", "actionTimestamp": ${TIME1}}`));
+    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 2, "description": "90 ppm", "actionTimestamp": ${TIME1}}`));
+    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 3, "description": "14/9", "actionTimestamp": ${TIME1}}`));
+    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 1, "description": "37º", "actionTimestamp": ${TIME2}}`));
+    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 2, "description": "90 ppm", "actionTimestamp": ${TIME2}}`));
+    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 3, "description": "14/9", "actionTimestamp": ${TIME2}}`));
+    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 1, "description": "37º", "actionTimestamp": ${TIME3}}`));
+    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 2, "description": "90 ppm", "actionTimestamp": ${TIME3}}`));
+    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 3, "description": "14/9", "actionTimestamp": ${TIME3}}`));
+    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 1, "description": "37º", "actionTimestamp": ${TIME4}}`));
+    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 2, "description": "90 ppm", "actionTimestamp": ${TIME4}}`));
+    this.valuesVitalTake.push(JSON.parse(`{"vitalId": 3, "description": "14/9", "actionTimestamp": ${TIME4}}`));
+    this.itemsVitalTake.next(this.valuesVitalTake);
+
+    console.log("valuesVital", this.valuesVital);
+    console.log("itemsVital", this.itemsVital);
+    console.log("valuesVitalTake", this.valuesVitalTake);
+    console.log("itemsVitalTake", this.itemsVitalTake);
   }
 
   private getFirstLetter(fullName: string): string {

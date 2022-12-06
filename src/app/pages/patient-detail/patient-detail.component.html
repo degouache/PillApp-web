@@ -64,15 +64,7 @@
   </div>
   <!--Cards-->
   <div class="d-flex scrolling-wrapper ms-5 me-5 mb-5">
-    <app-card-vital-patient></app-card-vital-patient>
-    <app-card-vital-patient></app-card-vital-patient>
-    <app-card-vital-patient></app-card-vital-patient>
-    <app-card-vital-patient></app-card-vital-patient>
-    <app-card-vital-patient></app-card-vital-patient>
-    <app-card-vital-patient></app-card-vital-patient>
-    <app-card-vital-patient></app-card-vital-patient>
-    <app-card-vital-patient></app-card-vital-patient>
-    <app-card-vital-patient></app-card-vital-patient>
+    <app-card-vital-patient *ngFor="let item of (itemsVital | async)" [data]="item"></app-card-vital-patient>
   </div>
   <!--DIVIDER WITH LINK-->
   <p class="h4 ms-5 mt-5">Tomas de medicamento</p>
@@ -88,7 +80,7 @@
   </div>
   <!--Cards-->
   <div class="d-flex scrolling-wrapper ms-5 me-5 mb-5">
-    <app-card-drug-take-patient *ngFor="let item of (itemsDrugAction | async)" [data]="item"></app-card-drug-take-patient>
+    <app-card-drug-take-patient *ngFor="let item of (itemsDrugTake | async)" [data]="item"></app-card-drug-take-patient>
   </div>
   <!--DIVIDER WITH LINK-->
   <p class="h4 ms-5 mt-5">Mediciones realizadas</p>
@@ -104,16 +96,7 @@
   </div>
   <!--Cards-->
   <div class="d-flex scrolling-wrapper ms-5 me-5 mb-5">
-    <app-card-vital-take-patient></app-card-vital-take-patient>
-    <app-card-vital-take-patient></app-card-vital-take-patient>
-    <app-card-vital-take-patient></app-card-vital-take-patient>
-    <app-card-vital-take-patient></app-card-vital-take-patient>
-    <app-card-vital-take-patient></app-card-vital-take-patient>
-    <app-card-vital-take-patient></app-card-vital-take-patient>
-    <app-card-vital-take-patient></app-card-vital-take-patient>
-    <app-card-vital-take-patient></app-card-vital-take-patient>
-    <app-card-vital-take-patient></app-card-vital-take-patient>
-    <app-card-vital-take-patient></app-card-vital-take-patient>
+    <app-card-vital-take-patient *ngFor="let item of (itemsVitalTake | async)" [data]="item"></app-card-vital-take-patient>
   </div>
   <!--DIVIDER WITH LINK-->
   <p class="h4 ms-5 mt-5">Otros encargados</p>

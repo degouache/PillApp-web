@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {DataObject} from "../../models/patient.interface";
 
 @Component({
   selector: 'app-card-vital-patient',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardVitalPatientComponent implements OnInit {
 
+  @Input() public data?: DataObject;
+  public periodText : string = "";
+
   constructor() { }
 
   ngOnInit() {
+    this.periodText = "Cada 8 horas";
   }
 
 }
