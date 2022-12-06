@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {DataObject} from "../../models/patient.interface";
 
 @Component({
   selector: 'app-card-vital-take-patient',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardVitalTakePatientComponent implements OnInit {
 
+  @Input() public data?: DataObject;
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

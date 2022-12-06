@@ -9,6 +9,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { CardDrugTakePatientComponent } from 'src/app/shared/card-patient-detail/card-drug-take-patient/card-drug-take-patient.component';
 import { CardVitalPatientComponent } from 'src/app/shared/card-patient-detail/card-vital-patient/card-vital-patient.component';
 import {TopNavigationModule} from "../../shared/top-navigation/top-navigation.module";
+import {
+  CardRememberDoItPatientComponent
+} from "../../shared/card-patient-detail/card-remember-do-it-patient/card-remember-do-it-patient.component";
 
 const routes: Routes = [
   {
@@ -25,6 +28,7 @@ const routes: Routes = [
     CardDrugPatientComponent,
     CardVitalPatientComponent,
     CardVitalTakePatientComponent,
+    CardRememberDoItPatientComponent,
     CardStaffComponent
   ],
   imports: [CommonModule, RouterModule.forChild(routes), TopNavigationModule],
