@@ -1,10 +1,12 @@
 <!-- Image and text -->
-<nav class="navbar navbar-light bg-white nav-shadow">
+<nav class="navbar navbar-light bg-white nav-shadow p-0">
     <a class="navbar-brand">
       <img src=".\assets\drawable\Perfil.svg" width="50" height="50" class="d-inline-block align-top ms-5 profile-nav" alt="" >
     </a>
-    <img src=".\assets\drawable\pill_app_logo_splash.svg" width="200"  class="d-inline-block align-top" alt="" >
-    <div class="text-center mt-3 ms-2 me-5">
+    <div class="col-3 col-sm-3 col-md-2 col-lg-2 col-xl-1 mt-1 m-auto">
+      <img src=".\assets\drawable\pill_app_logo_clean.svg" class="d-inline-block align-top mt-1" alt="" >
+    </div>
+    <div class="mt-1 ms-2 me-5">
       <ng-template #viewLogOut></ng-template>
       <button (click)="onLogout()" class="btn btn-outline-primary-cancel-small">
         Log out
