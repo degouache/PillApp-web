@@ -286,6 +286,9 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   filter: invert(75%) sepia(17%) saturate(1075%) hue-rotate(103deg) brightness(87%) contrast(92%);
 }
 
+.form-select{
+  color: var(--brandColor);
+}
 
 .form-control::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */

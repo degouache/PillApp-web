@@ -22,6 +22,7 @@
               aria-describedby="drug"
               (change)="onDrugSelected()"
             >
+              <option value="" selected disabled hidden>Selecciona medicamento</option>
               <option *ngFor="let item of (itemsDrug | async)" [value]="item.id">{{item.description}}</option>
             </select>
             <div
