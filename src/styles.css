@@ -565,6 +565,7 @@ label {
   letter-spacing: normal;
 }
 .btn-add-small {
+  border: none;
   margin: 0px;
   border-radius: 5rem;
   box-shadow: 17px 17px 44.5px 0 rgba(50, 157, 156, 0.21);
@@ -580,6 +581,7 @@ label {
   color: #fff;
 }
 .btn-add-small:hover {
+  border: none;
   margin: 0px;
   border-radius: 5rem;
   box-shadow: 17px 17px 44.5px 0 rgba(50, 157, 156, 0.21);
@@ -587,6 +589,7 @@ label {
   color: black;
 }
 .btn-add-small:focus {
+  border: none;
   margin: 0px;
   border-radius: 5rem;
   box-shadow: none;
