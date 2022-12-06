@@ -32,7 +32,7 @@
   </div>
   <!--Cards-->
   <div class="d-flex scrolling-wrapper ms-5 me-5 mb-5">
-    <app-card-remember-date-patient *ngFor="let item of (itemsMeeting | async)" [meeting]="item"></app-card-remember-date-patient>
+    <app-card-remember-date-patient *ngFor="let item of (itemsMeeting | async)" [data]="item"></app-card-remember-date-patient>
   </div>
   <!--DIVIDER WITH LINK-->
   <p class="h4 ms-5 mt-5">Prescripciones médicas</p>
@@ -48,7 +48,7 @@
   </div>
   <!--Cards-->
   <div class="d-flex scrolling-wrapper ms-5 me-5 mb-5">
-    <app-card-drug-patient *ngFor="let item of (itemsDrug | async)" [drug]="item"></app-card-drug-patient>
+    <app-card-drug-patient *ngFor="let item of (itemsDrug | async)" [data]="item"></app-card-drug-patient>
   </div>
   <!--DIVIDER WITH LINK-->
   <p class="h4 ms-5 mt-5">Pautas de medición</p>
@@ -88,14 +88,7 @@
   </div>
   <!--Cards-->
   <div class="d-flex scrolling-wrapper ms-5 me-5 mb-5">
-    <app-card-drug-take-patient ></app-card-drug-take-patient>
-    <app-card-drug-take-patient ></app-card-drug-take-patient>
-    <app-card-drug-take-patient ></app-card-drug-take-patient>
-    <app-card-drug-take-patient ></app-card-drug-take-patient>
-    <app-card-drug-take-patient ></app-card-drug-take-patient>
-    <app-card-drug-take-patient ></app-card-drug-take-patient>
-    <app-card-drug-take-patient ></app-card-drug-take-patient>
-    <app-card-drug-take-patient ></app-card-drug-take-patient>
+    <app-card-drug-take-patient *ngFor="let item of (itemsDrugAction | async)" [data]="item"></app-card-drug-take-patient>
   </div>
   <!--DIVIDER WITH LINK-->
   <p class="h4 ms-5 mt-5">Mediciones realizadas</p>
@@ -163,7 +156,7 @@
       <a routerLink="vital-lecture">Añadir lectura de signo vital</a>
     </div>
   </div>
-  
+
 </div>
 
 

@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { PatientDetailCardService } from '../../services/patient-detail-card/patient-detail-card.service';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { BehaviorSubject, Subscription } from 'rxjs';
-import { DataObject } from '../../shared/models/patient.interface';
+import {Component, OnInit} from '@angular/core';
+import {PatientDetailCardService} from '../../services/patient-detail-card/patient-detail-card.service';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
+import {BehaviorSubject, Subscription} from 'rxjs';
+import {DataObject} from '../../shared/models/patient.interface';
 
 @Component({
   selector: 'app-patient-detail',
@@ -16,26 +16,32 @@ export class PatientDetailComponent implements OnInit {
   public valuesMeeting: DataObject[] = [];
   public itemsDrug: BehaviorSubject<any> = new BehaviorSubject<any>([]);
   public valuesDrug: DataObject[] = [];
+  public itemsDrugAction: BehaviorSubject<any> = new BehaviorSubject<any>([]);
+  public valuesDrugAction: DataObject[] = [];
   private patientId: number = 0;
 
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private cardService: PatientDetailCardService
-  ) {}
+  ) {
+  }
 
   private paramSub!: Subscription;
+
   ngOnInit() {
     this.paramSub = this.activatedRoute.paramMap.subscribe(
       (params: ParamMap) => {
         let paramStr = params.get('id');
         if (paramStr != null) {
-          this.patientId = Number.parseInt(paramStr)
+          this.patientId = Number.parseInt(paramStr);
           this.loadDataForPatient(this.patientId);
+          this.loadFakeDataForPatient(); // hardcoded data that is not in the API
         }
       }
     );
   }
+
   ngOnDestroy() {
     this.paramSub.unsubscribe();
   }
@@ -65,14 +71,31 @@ export class PatientDetailComponent implements OnInit {
           update.data.fullName = this.getPatientName(update.data.patientId);
           this.valuesDrug.push(update.data);
           this.itemsDrug.next(this.valuesDrug);
+        } else if (
+          update.type == 'drugAction' &&
+          update.data.patientId == patientId
+        ) {
+          update.data.date = this.transformTime(update.data.doneTimestamp);
+          update.data.fullName = this.getPatientName(update.data.patientId);
+          this.valuesDrugAction.push(update.data);
+          this.itemsDrugAction.next(this.valuesDrugAction);
         }
       }
+      console.log("patient", this.valuesPatient);
+      console.log("meeting", this.valuesMeeting);
+      console.log("drug", this.valuesDrug);
+      console.log("drugAction", this.valuesDrugAction);
     });
+  }
+
+  loadFakeDataForPatient() {  // hardcoded data that is not in the API
+    // TODO
   }
 
   private getFirstLetter(fullName: string): string {
     return fullName.charAt(0).toUpperCase();
   }
+
   private transformTime(appointmentTimestamp: number): Date {
     var epoch = appointmentTimestamp;
     var date = new Date(0);
