@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL:'http://51.38.38.144/pillapp-api'
+  API_URL:'https://dev.ricaragas.com/pillapp-api'
 };
 
 /*
