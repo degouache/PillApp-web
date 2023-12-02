@@ -9,7 +9,7 @@ import { Location } from '@angular/common';
 })
 export class TopNavigationComponent implements OnInit {
   logedIn = false;
-  @Input() public backUrl : string = "/home";
+  @Input() public backUrl : string = "PillApp-web/home";
 
   constructor(private autheService: AuthService, private location: Location) {}
 
