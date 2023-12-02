@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { Location } from '@angular/common';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-top-navigation',
@@ -9,9 +10,9 @@ import { Location } from '@angular/common';
 })
 export class TopNavigationComponent implements OnInit {
   logedIn = false;
-  @Input() public backUrl : string = "/home";
+  @Input() public backUrl : string = "home";
 
-  constructor(private autheService: AuthService, private location: Location) {}
+  constructor(private autheService: AuthService, private location: Location, private router:Router) {}
 
   ngOnInit(): void {
     this.autheService.logedIn.subscribe(
@@ -25,6 +26,10 @@ export class TopNavigationComponent implements OnInit {
 
   back(): void {
     this.location.back();
+  }
+
+  home(): void {
+    this.router.navigate(['home']);
   }
 
 }
