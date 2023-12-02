@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" viewBox="0 0 43 43">
-  <g id="Icon_medicacion" transform="translate(1.5 1.5)">
-    <g id="Icons_pill" data-name="Icons/ pill">
-      <path id="Path" d="M2.8,37.2h0a9.9,9.9,0,0,1,0-13.793L23.408,2.8A9.9,9.9,0,0,1,37.2,2.8h0a9.9,9.9,0,0,1,0,13.793L16.592,37.2A9.9,9.9,0,0,1,2.8,37.2Z" transform="translate(0 0)" fill="none" stroke="#47cacc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
-      <path id="Path-2" data-name="Path" d="M0,0,13.306,13.306" transform="translate(13.509 13.509)" fill="none" stroke="#47cacc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
-    </g>
-  </g>
-</svg>
