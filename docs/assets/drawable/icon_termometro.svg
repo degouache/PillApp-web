@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="43" height="42.981" viewBox="0 0 43 42.981">
+  <g id="Icon_termometro" transform="translate(1.5 1.5)">
+    <g id="Icons_fever" data-name="Icons/ fever">
+      <path id="Path" d="M27.48.956,7.967,20.468,6.829,26.159,0,35.428l4.553,4.553,9.268-6.829,5.691-1.138L39.024,12.5a3.144,3.144,0,0,0,0-4.553L32.2,1.119A3.2,3.2,0,0,0,27.48.956Z" fill="none" stroke="#47cacc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+      <rect id="Rectangle" width="3.252" height="13.008" transform="translate(25.26 12.495) rotate(45)" fill="none" stroke="#47cacc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+      <path id="Path-2" data-name="Path" d="M2.276,0,0,2.276" transform="translate(29.756 7.948)" fill="none" stroke="#47cacc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+      <path id="Path-3" data-name="Path" d="M0,0,5.854,5.854" transform="translate(3.902 30.224)" fill="none" stroke="#47cacc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+    </g>
+  </g>
+</svg>
