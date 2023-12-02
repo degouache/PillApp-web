@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="43" height="38.401" viewBox="0 0 43 38.401">
+  <g id="Icon_pulso" transform="translate(1.5 1.5)">
+    <g id="Icons_heart" data-name="Icons/ heart" transform="translate(0)">
+      <path id="Path" d="M36.864,3.117h0a10.133,10.133,0,0,0-14.622,0l-2,2.155a.7.7,0,0,1-.77,0l-2-2.155A9.954,9.954,0,0,0,3,3.117H3A10.977,10.977,0,0,0,3,18.2l2.463,2.463L19.625,35.286a.7.7,0,0,0,.77,0L34.555,20.664,37.018,18.2A10.828,10.828,0,0,0,36.864,3.117Z" fill="none" stroke="#47cacc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+      <path id="Path-2" data-name="Path" d="M0,4.618H4.618L7.7,1.539,10.774,7.7,13.853,0l3.078,4.618h4.618" transform="translate(9.158 10.813)" fill="none" stroke="#47cacc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+    </g>
+  </g>
+</svg>

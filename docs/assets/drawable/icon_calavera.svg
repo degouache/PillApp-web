@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="43" height="46.53" viewBox="0 0 43 46.53">
+  <g id="Icon_calavera" transform="translate(1.5 1.5)">
+    <g id="Icons_skull" data-name="Icons/ skull">
+      <path id="Path" d="M20,0A19.883,19.883,0,0,0,0,19.667v9.5a4.056,4.056,0,0,0,4,4H4c2.167,0,4.333,1.333,4.333,3.5v5a37.234,37.234,0,0,0,23.333,0v-5c0-2.167,2.167-3.5,4.333-3.5h0a4.056,4.056,0,0,0,4-4v-9.5A19.883,19.883,0,0,0,20,0Z" fill="none" stroke="#47cacc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+      <path id="Path-2" data-name="Path" d="M3.333,3.333,1.667,0,0,3.333" transform="translate(18.333 30)" fill="none" stroke="#47cacc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+      <path id="Path-3" data-name="Path" d="M6.833,7.833l-2,.5A4.182,4.182,0,0,1,0,4.333V4A4.056,4.056,0,0,1,4,0H6A3.957,3.957,0,0,1,9.833,5h0A4,4,0,0,1,6.833,7.833Z" transform="translate(6.667 21.667)" fill="none" stroke="#47cacc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+      <path id="Path-4" data-name="Path" d="M3.138,7.833l2,.333A3.981,3.981,0,0,0,9.971,4.333V4a4.056,4.056,0,0,0-4-4h-2A3.957,3.957,0,0,0,.138,5h0A4,4,0,0,0,3.138,7.833Z" transform="translate(23.362 21.667)" fill="none" stroke="#47cacc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+    </g>
+  </g>
+</svg>

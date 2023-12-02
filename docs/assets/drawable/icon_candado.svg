@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
+  <g id="Icon_candado" transform="translate(1 1)">
+    <path id="Path" d="M0,.5H7" transform="translate(11.5 18.5) rotate(-90)" fill="none" stroke="#56c596" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path-2" data-name="Path" d="M20.308,18H3.692A3.658,3.658,0,0,1,0,14.4V3.6A3.658,3.658,0,0,1,3.692,0H20.308A3.658,3.658,0,0,1,24,3.6V14.4A3.658,3.658,0,0,1,20.308,18Z" transform="translate(0 6)" fill="none" stroke="#56c596" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path-3" data-name="Path" d="M10,6H0V4A4.012,4.012,0,0,1,4,0H6a4.012,4.012,0,0,1,4,4Z" transform="translate(7)" fill="none" stroke="#56c596" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+</svg>

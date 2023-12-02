@@ -1,0 +1,7 @@
+<svg id="Icon_search" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <rect id="Iconly_Curved_Search_Background_" data-name="Iconly/Curved/Search (Background)" width="40" height="40" fill="none"/>
+  <g id="Search" transform="translate(4.583 4.583)">
+    <circle id="Oval" cx="11.178" cy="11.178" r="11.178" fill="none" stroke="#47cacc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+    <path id="Path" d="M0,4.968l8.694,8.694a3.523,3.523,0,0,0,4.968,0h0a3.523,3.523,0,0,0,0-4.968L4.968,0" transform="translate(16.146 16.146)" fill="none" stroke="#47cacc" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="3"/>
+  </g>
+</svg>
